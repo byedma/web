@@ -1,0 +1,1 @@
+angular.module("appHobby").controller("hobbyController", function($scope){});

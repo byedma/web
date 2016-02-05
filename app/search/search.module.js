@@ -1,0 +1,1 @@
+var appSearch = angular.module('appSearch', ['ngRoute']);

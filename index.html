@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" ng-app="hhliving">
+    <head>
+        <title>h h life, Happy Healthy Living India for Everyone</title>
+        <!--styling-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/css/w3.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="/css/custom.css" rel="stylesheet" />
+        <!--library dependencies-->
+        <script src="vendor/jquery.min.js"></script>
+        <script src="vendor/angular.min.js"></script>
+        <script src="vendor/angular-route.min.js"></script>
+        <script src="vendor/angular-resource.min.js"></script>
+        <script src="/vendor/angular-animate.min.js"></script>
+        <script src="/vendor/angular-cookies.min.js"></script>
+        <script src="/vendor/TweenMax.min.js"></script>        
+        <script src="vendor/highcharts.js"></script>
+        <!--angular application dependencies-->
+        <script src="app/app.module.js"></script>
+        <!--shell, landing page -->
+        <script src="app/layout/shell.module.js"></script>
+        <script src="app/layout/shell.ctrl.js"></script>
+        <!--shell, landing page -->
+        <script src="app/landing/landing.module.js"></script>
+        <script src="app/landing/landing.ctrl.js"></script>        
+        <!--search, results page -->
+        <script src="app/search/search.module.js"></script>
+        <script src="app/search/search.ctrl.js"></script>
+        <!--habits page -->
+        <script src="app/habit/habit.module.js"></script>
+        <script src="app/habit/habit.ctrl.js"></script>
+        <!--hobbies page -->
+        <script src="app/hobby/hobby.module.js"></script>
+        <script src="app/hobby/hobby.ctrl.js"></script>
+        <!--routines page -->
+        <script src="app/routine/routine.module.js"></script>
+        <script src="app/routine/routine.ctrl.js"></script>
+        <!--programs page -->
+        <script src="app/program/program.module.js"></script>
+        <script src="app/program/program.ctrl.js"></script>        
+        <!--challenges page -->
+        <script src="app/challenge/challenge.module.js"></script>
+        <script src="app/challenge/challenge.ctrl.js"></script>
+        <!--profile page -->
+        <script src="app/profile/profile.module.js"></script>
+        <script src="app/profile/profile.ctrl.js"></script>
+        <!--reusable directives defined in component-->
+        <script src="app/component/component.module.js"></script>
+        <script src="app/component/search.view.js"></script>
+        <!--all services aboard-->
+        <script src="app/data/data.module.js"></script>
+        <script src="app/data/userprofile.svc.js"></script>
+        <script src="app/data/usercircles.svc.js"></script>
+        <script src="app/data/circlemembers.svc.js"></script>
+    </head>
+    <body>		
+        
+        <ng-include src="'app/layout/shell.html'"></ng-include>
+
+    </body>
+</html>

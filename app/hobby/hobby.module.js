@@ -1,0 +1,1 @@
+var appHobby = angular.module('appHobby', ['ngRoute']);

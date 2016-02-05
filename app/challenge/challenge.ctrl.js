@@ -1,0 +1,1 @@
+angular.module("appChallenge").controller("challengeController", function($scope){});

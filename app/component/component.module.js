@@ -1,0 +1,1 @@
+var appComponent = angular.module('appComponent', ['ngRoute']);
