@@ -1,0 +1,27 @@
+<div ng-app="appSignIn">
+<div class="userinputform">
+<div class="w3-container w3-green w3-card-4" ng-controller="signInController">
+  <h4>Login</h4>
+</div> 
+    <div class="w3-container w3-card-4">
+
+          <form role="form" ng-submit="signin()">
+            <div class="alert alert-danger" ng-show="error" ng-bind="error"></div>
+
+            <div class="form-group">
+              <label for="signin_email" class="w3-label w3-text-black"><B>Email</B></label>
+              <input type="text" class="form-control w3-input" id="signin_email" ng-model="newSignIn.email" placeholder="ex. john@example.com" maxlength="50" />
+            </div>
+
+            <div class="form-group">
+              <label for="signin_password" class="w3-label w3-text-black"><B>Password</B></label>
+              <input type="password" class="form-control w3-input" id="signin_password" ng-model="newSignIn.password" placeholder="ex. thisisnotgoogleplus"  maxlength="50"/>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="w3-btn btn-primary">Submit</button>
+            </div>
+          </form>
+    </div>
+</div>
+</div>

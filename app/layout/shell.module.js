@@ -3,7 +3,12 @@ var appShell = angular.module('appShell', ['ngRoute']);
 appShell.config(function ($routeProvider) {
 
     $routeProvider
-    
+        .when('/signin', {
+        
+            templateUrl: 'app/signin/signin.html',
+            controller: 'signInController'
+
+        })    
         .when('/landing', {
         
             templateUrl: 'app/landing/landing.html',

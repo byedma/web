@@ -2,33 +2,33 @@
 <div class="w3-container w3-green" ng-controller="profileController">
   <h4>User Profile</h4>
 </div>
-<div class="userdetailsform">
+<div class="userinputform">
     <div class="w3-container w3-card-4">
     <form name="userProfileForm" ng-submit="updateUserProfile()">
         <div class="form-group">
 
           <div>
-            <label class="w3-label w3-text-black">Title</label>  
+            <label class="w3-label w3-text-black"><B>Title</B></label>  
             <input type="text" class="w3-input" id="title" ng-model="userProfile.title">
           </div>    
           <div>
-            <label class="w3-label w3-text-black">First Name</label>  
+              <label class="w3-label w3-text-black"><B>First Name</B></label>  
             <input type="text" class="w3-input" id="firstname" ng-model="userProfile.first_name">
           </div>
           <div>
-            <label class="w3-label w3-text-black">Last Name</label>  
+            <label class="w3-label w3-text-black"><B>Last Name</B></label>  
             <input type="text" class="w3-input" id="lastname" ng-model="userProfile.last_name">
           </div>
           <div>
-            <label class="w3-label w3-text-black">email</label>  
+            <label class="w3-label w3-text-black"><B>Email Address</B></label>  
             <input type="text" class="w3-input w3-validate" id="email" ng-model="userProfile.email">
           </div>
           <div>
-            <label class="w3-label w3-text-black">Date Of Birth</label>  
+            <label class="w3-label w3-text-black"><B>Date Of Birth</B></label>  
             <input type="date" class="w3-input w3-validate" id="dateofbirth" ng-model="userProfile.date_of_birth">
           </div>
             <br/>
-        <button type="submit" class="w3-btn">Update Profile</button>
+        <button type="submit" class="w3-btn"><B>Update Profile</B></button>
         </div>
     </form>       
     </div>
@@ -37,40 +37,40 @@
 </div>
     
     <br/>
-<div class="w3-container w3-green w3-card-4" ng-controller="profileController">
+<div class="w3-container w3-green" ng-controller="profileController">
   <h4>Register</h4>
 </div>    
     
-<div class="newuserform">
-    <div class="w3-container">
+<div class="userinputform">
+    <div class="w3-container  w3-card-4">
     <form name="createUserForm" ng-submit="createUserProfile()">
         <div class="form-group">   
           <div>
-            <label class="w3-label w3-text-black">First Name</label>  
+            <label class="w3-label w3-text-black"><B>First Name</B></label>  
             <input type="text" class="w3-input" id="firstname" ng-model="newUserProfile.first_name" maxlength="50">
           </div>
           <div>
-            <label class="w3-label w3-text-black">Last Name</label>  
+            <label class="w3-label w3-text-black"><B>Last Name</B></label>  
             <input type="text" class="w3-input" id="lastname" ng-model="newUserProfile.last_name" maxlength="50">
           </div>
           <div>
-            <label class="w3-label w3-text-black">Middle Name</label>  
+            <label class="w3-label w3-text-black"><B>Middle Name</B></label>  
             <input type="text" class="w3-input" id="middlename" ng-model="newUserProfile.middle_name" maxlength="25">
           </div>
           <div>
-            <label class="w3-label w3-text-black">Password</label>  
+            <label class="w3-label w3-text-black"><B>Password</B></label>  
             <input type="password" class="w3-input" id="password" ng-model="newUserProfile.password" maxlength="25">
           </div> 
           <div>
-            <label class="w3-label w3-text-black">Confirm Password</label>  
+            <label class="w3-label w3-text-black"><B>Confirm Password</B></label>  
             <input type="password" class="w3-input" id="title" ng-model="newUserProfile.confirm_password" maxlength="25">
           </div>             
           <div>
-            <label class="w3-label w3-text-black">email</label>  
+              <label class="w3-label w3-text-black"><B>Email Address</B></label>  
             <input type="email" class="w3-input w3-validate" id="email" ng-model="newUserProfile.email" maxlength="50">
           </div>
           <div>
-            <label class="w3-label w3-text-black">Title</label>  
+            <label class="w3-label w3-text-black"><B>Title</B></label>  
             <select class="form-control" id="title" ng-model="newUserProfile.title">
             <option value="MRS">Mrs</option>
             <option value="MR" selected>Mr</option>
@@ -79,7 +79,7 @@
           </select>
           </div>
           <div>
-            <label class="w3-label w3-text-black">gender</label>  
+              <label class="w3-label w3-text-black"><B>Gender</B></label>  
               <select class="form-control" id="gender" ng-model="newUserProfile.gender">
                 <option value="M" selected>Male</option>
                 <option value="F">Female</option>
@@ -88,7 +88,7 @@
           </div>            
 
             <br/>
-        <button type="submit" class="w3-btn">Submit</button>
+        <button type="submit" class="w3-btn"><B>Submit</B></button>
         </div>
     </form>       
     </div>
@@ -106,26 +106,26 @@
             <form name="createCircleForm" ng-submit="createCircle()">
                 <div class="form-group">   
                       <div>
-                        <label class="w3-label w3-text-black">Name</label>  
+                        <label class="w3-label w3-text-black"><B>Name</B></label>  
                         <input type="text" class="w3-input" id="name" ng-model="newCircleDetails.name" maxlength="50">
                       </div>
                       <div>
-                        <label class="w3-label w3-text-black">Description</label>  
+                        <label class="w3-label w3-text-black"><B>Description</B></label>  
                         <input type="text" class="w3-input" id="desc" ng-model="newCircleDetails.description" maxlength="50">
                       </div>
                       <div>
-                        <label class="w3-label w3-text-black">Members can refer</label>  
+                        <label class="w3-label w3-text-black"><B>Members can refer</B></label>  
                         <select class="form-control" id="canRefer" ng-model="newCircleDetails.members_can_refer">
                             <option value="true" selected>Yes</option>
                             <option value="false">No</option>
                         </select>    
                       </div>
                       <div>
-                        <label class="w3-label w3-text-black">Maximum Number of Members</label>  
+                        <label class="w3-label w3-text-black"><B>Maximum Number of Members</B></label>  
                         <input type="number" class="w3-input" id="maxMembers" ng-model="newCircleDetails.max_number_members" maxlength="50">
                       </div>                    
                     <br/>
-                <button type="submit" class="w3-btn">Submit</button>
+                <button type="submit" class="w3-btn"><B>Submit</B></button>
                 </div>            
             
         </form>
