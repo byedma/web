@@ -2,9 +2,9 @@ appData.service("signInService", function($http, $q) {
 
     this.signIn = function (signin) {
         
-        var url = "http://localhost:8000/api/v1/users/login/";
+        var url = "http://localhost:8000/api/v1/login/";
         console.log(url);
-
+        console.log(signin)
         var defer = $q.defer();
 
         $http.post(url, { 
