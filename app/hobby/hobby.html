@@ -1,1 +1,58 @@
-<div>Hobby Results</div>
+<div ng-app="appHobby">
+    
+    <div class="w3-container w3-green" ng-controller="hobbyController">
+      <h4>Hobbies</h4>
+    </div>
+
+    <div ng-repeat="(hobbyIndex, h) in hobbyList">
+        <div class="w3-container w3-card-4">
+            <ul>
+                  <li>
+                    <label class="w3-label w3-text-black"><B>Title: </B>{{h.name}}</label>  
+                  </li>    
+                  <li>
+                      <label class="w3-label w3-text-black"><B>Introduction: </B>{{h.short_desc}}</label>  
+                  </li>
+                  <li>
+                    <label class="w3-label w3-text-black"><B>Description: </B>{{h.text}}</label>  
+                  </li>
+            </ul>
+                <br/>
+            <form name="hobby" ng-submit="subscribeToHobby(h)">
+                <div class="form-group">
+<!--
+                    <div>
+                        <label class="w3-label w3-text-black"><B>Nick Name</B></label>  
+                        <input type="text" class="w3-input" id="name" ng-model="newHobbyDetails.nick_name" maxlength="50">
+                      </div>
+    -->                
+                  <button type="submit" class="w3-btn"><B>Subscribe</B></button>
+                  <button type="button" class="w3-btn" onclick=""><B>Recommend</B></button>
+                  <button ng-click="showHobbyReviews(hobbyIndex, h)" class="w3-btn"><B>Show Reviews</B></button>        
+                </div>
+            </form><br/>
+
+                
+                <div ng-repeat="r in hobbyReviewList" ng-show="isShowing(hobbyIndex)">
+                    <h5>Review</h5>
+                    <div class="w3-container w3-bordered w3-striped w3-border w3-card-4" >
+                        
+                        <ul>
+                              <li>
+                                <label class="w3-label w3-text-black"><B>Name: </B>{{r.user_id}} {{r.active}}</label>  
+                              </li>    
+                              <li>
+                                  <label class="w3-label w3-text-black"><B>Rating: </B>{{r.rating}} {{r.active}}</label>  
+                              </li>
+                              <li>
+                                <label class="w3-label w3-text-black"><B>Comments: </B>{{r.comments}} {{r.active}}</label>  
+                              </li>
+                        </ul>                
+                    </div>    
+                </div>
+   
+                     
+        </div>
+    </div>
+    
+</div>

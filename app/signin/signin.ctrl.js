@@ -1,5 +1,5 @@
 
-angular.module("appSignIn").controller("signInController", ['$scope', '$resource', 'signInService', function($scope, $resource, signInService){
+angular.module("appSignIn").controller("signInController", ['$scope', '$resource', '$rootScope', '$window', 'signInService', function($scope, $resource, $rootScope, $window, signInService){
     
         $scope.newSignIn = null;
     
@@ -10,9 +10,13 @@ angular.module("appSignIn").controller("signInController", ['$scope', '$resource
             signInService.signIn($scope.newSignIn)
             .then(
                     function(response){
-                        
-                        $scope.signInResult=response;
-                        console.log($scope.signInResult);
+                        $rootScope.disableSignInButton = {visibility: 'hidden'};
+                        $rootScope.disableSignOutButton = {visibility: 'visible'};
+                        $rootScope.disableRegisterButton = {visibility: 'hidden'};                         
+                        $rootScope.signInResult=response;
+                        $rootScope.login='success';
+                        console.log($rootScope.signInResult);
+                        $window.location='/index.html#/landing';
                         
                     },
                     function(err){
@@ -21,7 +25,6 @@ angular.module("appSignIn").controller("signInController", ['$scope', '$resource
             )
             
         }
-    
     
     
 }]);

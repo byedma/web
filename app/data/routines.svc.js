@@ -1,9 +1,9 @@
-appData.service("habitService", function($http, $q){
+appData.service("routineService", function($http, $q){
     var self = this;   
 
-    //List of Habits suggested by experts
-    this.habitList = function(){
-        var url = "http://localhost:8000/api/v1/habits/";
+    //List of routines suggested by experts
+    this.routineList = function(){
+        var url = "http://localhost:8000/api/v1/routines/";
         console.log(url); 
         var defer = $q.defer();
         $http.get(url, {callback:"JSON_CALLBACK"}, {get:{method: "JSONP"}})
@@ -18,10 +18,10 @@ appData.service("habitService", function($http, $q){
         
     };
     
-    //Retrieves the list of reviews for a given habit id
-    this.habitReviewList = function(habitid){
-        console.log(habitid);
-        var url = "http://localhost:8000/api/v1/habitreviews/?habit_id="+ habitid;
+    //Retrieves the list of reviews for a given routine id
+    this.routineReviewList = function(routineid){
+        console.log(routineid);
+        var url = "http://localhost:8000/api/v1/routinereviews/?routine_id="+ routineid;
         console.log(url); 
         var defer = $q.defer();
         $http.get(url, {callback:"JSON_CALLBACK"}, {get:{method: "JSONP"}})
@@ -36,10 +36,10 @@ appData.service("habitService", function($http, $q){
         
     };
 
-    //retrieves Habit Services for customer's hhProfile
-    this.habitServiceList = function(userid){
+    //retrieves Routine Services for customer's hhProfile
+    this.routineServiceList = function(userid){
         console.log(userid);
-        var url = "http://localhost:8000/api/v1/habitservices/?customer_id="+ userid;
+        var url = "http://localhost:8000/api/v1/routineservices/?customer_id="+ userid;
         console.log(url); 
         var defer = $q.defer();
         $http.get(url, {callback:"JSON_CALLBACK"}, {get:{method: "JSONP"}})
@@ -54,19 +54,19 @@ appData.service("habitService", function($http, $q){
         
     };    
 
-    //Customer subscribes to a habit, habit service gets created.
-    this.subscribeHabit = function(habitservice){
-        var url = "http://localhost:8000/api/v1/habitservices/";
+    //Customer subscribes to a routine, routine service gets created.
+    this.subscribeRoutine = function(routineservice){
+        var url = "http://localhost:8000/api/v1/routineservices/";
         console.log(url);
 
         var defer = $q.defer();
 
         $http.post(url, { 
-              habit_id: habitservice.habit_id,
-              user_id: habitservice.user_id,
-              nick_name: habitservice.nick_name,
-              status: habitservice.status,
-              end_date: habitservice.end_date,}, 
+              routine_id: routineservice.routine_id,
+              user_id: routineservice.user_id,
+              nick_name: routineservice.nick_name,
+              status: routineservice.status,
+              end_date: routineservice.end_date,}, 
                    {callback:"JSON_CALLBACK", _dont_enforce_csrf_checks:"True"}, {post:{method: "JSONP"}})
             .success(function(response){
                 defer.resolve(response);
@@ -77,18 +77,19 @@ appData.service("habitService", function($http, $q){
           
           return defer.promise;        
     };
+    
 
-    //Customer unsubscribes a habit, gets removed from hhProfile of the customer.
-    this.unsubscribeHabit = function(habitservice){
-        console.log(habitservice.id);
-        var url = "http://localhost:8000/api/v1/edit_habitservices/"+habitservice.id+"/";
+    //Customer unsubscribes a routine, gets removed from hhProfile of the customer.
+    this.unsubscribeRoutine = function(routineservice){
+        console.log(routineservice.id);
+        var url = "http://localhost:8000/api/v1/edit_routineservices/"+routineservice.id+"/";
         console.log(url);
 
         var defer = $q.defer();
 
         $http.put(url, { 
-              status: habitservice.status,
-              end_date: habitservice.end_date,}, 
+              status: routineservice.status,
+              end_date: routineservice.end_date,}, 
                   {callback:"JSON_CALLBACK", _dont_enforce_csrf_checks:"True"}, {put:{method: "JSONP"}})
             .success(function(response){
                 defer.resolve(response);
@@ -97,9 +98,8 @@ appData.service("habitService", function($http, $q){
                 defer.reject(response);    
             })
           
-          return defer.promise;         
-    };
- 
+          return defer.promise;
+        };         
     
     
 });

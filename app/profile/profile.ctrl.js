@@ -1,5 +1,5 @@
 
-angular.module("appProfile").controller("profileController", ['$scope', '$resource', 'userProfileService', 'circleService', 'circleMemberService',function($scope, $resource, userProfileService, circleService, circleMemberService){
+angular.module("appProfile").controller("profileController", ['$scope', '$resource', '$window', '$rootScope', 'userProfileService', 'circleService', 'circleMemberService',function($scope, $resource, $window, $rootScope, userProfileService, circleService, circleMemberService){
         
         $scope.userProfile = null;
         $scope.newUserProfile = null;
@@ -55,6 +55,11 @@ angular.module("appProfile").controller("profileController", ['$scope', '$resour
                     function(response){
                         $scope.userProfileCreateResult=response;
                         console.log($scope.userProfileCreateResult);
+                        $rootScope.signInResult=response;
+                        $rootScope.login='success';
+                        console.log($rootScope.signInResult);
+                        $window.location='/index.html#/landing';
+                        
                     },
                     function(err){
                         console.log('error creating the new user: ', err);
@@ -73,6 +78,7 @@ angular.module("appProfile").controller("profileController", ['$scope', '$resour
             $scope.newCircleDetails.created_by = 1;
             $scope.newCircleDetails.status = "A";
             //
+            console.log($scope.newCircleDetails);
             circleService.createCircle($scope.newCircleDetails)
             .then(
                     function(response){

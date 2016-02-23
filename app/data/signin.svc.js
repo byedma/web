@@ -21,6 +21,25 @@ appData.service("signInService", function($http, $q) {
           return defer.promise;
         };  
 
+    this.signOut = function (signInResult) {
+        
+        var url = "http://localhost:8000/api/v1/logout/";
+        console.log(url);
+        console.log(signInResult)
+        var defer = $q.defer();
 
+        $http.post(url, { 
+              id: signInResult.id,                 
+              email: signInResult.email}, 
+                   {callback:"JSON_CALLBACK", _dont_enforce_csrf_checks:"True"}, {post:{method: "JSONP"}})
+            .success(function(response){
+                defer.resolve(response);
+            })
+            .error(function(response){
+                defer.reject(response);    
+            })
+          
+          return defer.promise;
+        }; 
 
 });

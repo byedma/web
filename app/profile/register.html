@@ -1,0 +1,62 @@
+<div ng-app="appProfile">
+
+    <div class="w3-container w3-green" ng-controller="profileController">
+      <h4>Register</h4>
+    </div>    
+    
+    <div class="userinputform">
+        <div class="w3-container  w3-card-4">
+        <form name="createUserForm" ng-submit="createUserProfile()">
+            <div class="form-group">   
+              <div>
+                <label class="w3-label w3-text-black"><B>First Name</B></label>  
+                <input type="text" class="w3-input" id="firstname" ng-model="newUserProfile.first_name" maxlength="50">
+              </div>
+              <div>
+                <label class="w3-label w3-text-black"><B>Last Name</B></label>  
+                <input type="text" class="w3-input" id="lastname" ng-model="newUserProfile.last_name" maxlength="50">
+              </div>
+              <div>
+                <label class="w3-label w3-text-black"><B>Middle Name</B></label>  
+                <input type="text" class="w3-input" id="middlename" ng-model="newUserProfile.middle_name" maxlength="25">
+              </div>
+              <div>
+                <label class="w3-label w3-text-black"><B>Password</B></label>  
+                <input type="password" class="w3-input" id="password" ng-model="newUserProfile.password" maxlength="25">
+              </div> 
+              <div>
+                <label class="w3-label w3-text-black"><B>Confirm Password</B></label>  
+                <input type="password" class="w3-input" id="title" ng-model="newUserProfile.confirm_password" maxlength="25">
+              </div>             
+              <div>
+                  <label class="w3-label w3-text-black"><B>Email Address</B></label>  
+                <input type="email" class="w3-input w3-validate" id="email" ng-model="newUserProfile.email" maxlength="50">
+              </div>
+              <div>
+                <label class="w3-label w3-text-black"><B>Title</B></label>  
+                <select class="form-control" id="title" ng-model="newUserProfile.title">
+                <option value="MRS">Mrs</option>
+                <option value="MR" selected>Mr</option>
+                <option value="DR">Dr</option>
+                <option value="OTH">Others</option>
+              </select>
+              </div>
+              <div>
+                  <label class="w3-label w3-text-black"><B>Gender</B></label>  
+                  <select class="form-control" id="gender" ng-model="newUserProfile.gender">
+                    <option value="M" selected>Male</option>
+                    <option value="F">Female</option>
+                    <option value="O">Other</option>
+                  </select>
+              </div>            
+
+                <br/>
+            <button type="submit" class="w3-btn">Submit</button>
+            </div>
+        </form>       
+        </div>
+
+        <br/>
+    </div> 
+
+</div>

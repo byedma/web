@@ -11,20 +11,22 @@
                     <div class="w3-topnav w3-orange">       
 
                     <a href="#"><div class="categor"><i class="material-icons w3-large">home</i></div></a>    
-                    <a href="#" ng-click="shellRoute('/program')"><div class="categor">Programs</div></a>
-					<a href="#" ng-click="shellRoute('/habit')"><div class="categor">Habits</div></a>
-					<a href="#" ng-click="shellRoute('/hobby')"><div class="categor">Hobbies</div></a>
-					<a href="#" ng-click="shellRoute('/routine')"><div class="categor">Routines</div></a>
-					<a href="#" ng-click="shellRoute('/challenge')"><div class="categor">Challenges</div></a>
-                    <a href="#" ng-click="shellRoute('/hhprofile')"><div class="categor">hhProfile</div></a>
-                    <a href="#" ng-click="shellRoute('/signin')"><div id="signindiv">Sign-In</div></a>
-<!--
+                    <a href="#/program"><div class="categor">Programs</div></a>
+					<a href="#/habit"><div class="categor">Habits</div></a>
+					<a href="#/hobby"><div class="categor">Hobbies</div></a>
+					<a href="#/routine"><div class="categor">Routines</div></a>
+					<a href="#/challenge"><div class="categor">Challenges</div></a>
+                    <a href="#/profile"><div class="categor">hhProfile</div></a>   
+                    <a href="#/signin" ng-style="disableSignInButton"><div id="signindiv">Sign-In</div></a>
+                    <a href="#/register" ng-style="disableRegisterButton"><div id="signindiv">Register</div></a>
+                    <a href="#" ng-click="signOut()" ng-style="disableSignOutButton"><div id="signindiv">Sign-Out</div></a>
+                
+<!--                
                     <a href="#"><div id="signindiv">Register</div></a>
                     <a href="#"><div id="signindiv">SignOut</div></a>    
 -->
                     <div id="searchdiv">
-						<input type=text id="searchInput" placeholder="Search" ng-model="searchStr" autofocus="true">
-						
+						<input type=text id="searchInput" placeholder="Search" ng-model="searchStr" autofocus="true">						
 					</div>
                     </div>
                     <div class="container-fluid" ng-view></div>

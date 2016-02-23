@@ -2,7 +2,9 @@ var appShell = angular.module('appShell', ['ngRoute']);
 
 appShell.config(function ($routeProvider) {
 
-    $routeProvider
+        
+        $routeProvider
+        
         .when('/signin', {
         
             templateUrl: 'app/signin/signin.html',
@@ -56,7 +58,14 @@ appShell.config(function ($routeProvider) {
         
             templateUrl: 'app/profile/profile.html',
             controller: 'profileController'
-
+        
+        })
+        
+        .when('/register', {
+        
+            templateUrl: 'app/profile/register.html',
+            controller: 'profileController'
+            
         })
     
         .otherwise({

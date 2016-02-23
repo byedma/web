@@ -10,7 +10,7 @@
             }
 
     .fixedwidth{
-        width:1000px;
+        width:1200px;
         height: 20px;
         margin:0 auto;
         align-items: center;
@@ -32,19 +32,21 @@
         font-weight: bold;
         color:yellow;
         font-size: 0.9em;
-        border-right:none solid#E7E8E1;
+        border-right:1px solid#E7E8E1;
+        border-right-color: blue;
         height: 100%;
-        padding:0px 7px 7px 15px;
+        padding:0px 9px 9px 9px;
         float:left;
 
     }
+
     .categor{
         list-style: none;
         font-weight: bold;
         font-size: 0.9em;
         border-right:1px solid#E7E8E1;
         height: 100%;
-        padding:1px 7px 7px 15px;
+        padding:0px 9px 9px 9px;
         float:left;
         
     }
