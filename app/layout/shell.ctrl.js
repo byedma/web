@@ -19,23 +19,7 @@ angular.module("appShell").controller("shellController", ['$scope','$rootScope',
 
         }
     
-        $scope.signOut = function(){
-            console.log("in logout service")
-            console.log($rootScope.signInResult);
-            signInService.signOut($rootScope.signInResult)
-            .then(
-                    function(response){
-                        console.log(response);
-                        $rootScope.signOutResult=response;
-                        console.log($rootScope.signOutResult);
-                        $rootScope.login='SignedOut';
-                        },
-                    function(err){
-                        console.log('error logging out: ', err);
-                    }                 
-            )
-            
-        }
+
 
         init();
 }]);
