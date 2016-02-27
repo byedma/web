@@ -34,7 +34,7 @@ angular.module("appLanding").controller("landingController", function($scope, $t
         };
     
         $scope.init = function () {
-
+            if($scope.currentIndex == $scope.slides.length-1){$scope.currentIndex=-1}
             $scope.setCurrentSlideIndex($scope.currentIndex+1);
             $timeout($scope.init, 3000)
             

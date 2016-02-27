@@ -4,7 +4,7 @@ appCore.service("base64Service", function() {
     keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
     this.encode = function (input) {    
             var output = "";
-            var chr1, chr2, chr3 = "";
+/*            var chr1, chr2, chr3 = "";
             var enc1, enc2, enc3, enc4 = "";
             var i = 0;
  
@@ -31,7 +31,8 @@ appCore.service("base64Service", function() {
                     this.keyStr.charAt(enc4);
                 chr1 = chr2 = chr3 = "";
                 enc1 = enc2 = enc3 = enc4 = "";
-            } while (i < input.length);
+            } while (i < input.length);*/
+            output = window.btoa(input);
  
             return output;    
     };

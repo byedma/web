@@ -1,9 +1,9 @@
-
 angular.module("appSignIn").controller("signInController", ['$scope', '$resource', '$rootScope', '$window', '$cookies', '$http', 'signInService', 'base64Service', function($scope, $resource, $rootScope, $window, $cookies, $http, signInService, base64Service){
+    
     
         $scope.newSignIn = null;
         //clearing any credentials                                                    
-        var init = function(){clearCredentials();};
+        //var init = function(){clearCredentials();};
                                                             
         //new sign-In Verification
         $scope.signin = function(){
@@ -17,7 +17,9 @@ angular.module("appSignIn").controller("signInController", ['$scope', '$resource
                         $rootScope.disableRegisterButton = {visibility: 'hidden'};                         
                         $rootScope.signInResult=response;
                         $rootScope.login='success';
+                        $rootScope.username=$rootScope.signInResult.first_name +" " +$rootScope.signInResult.last_name;
                         console.log($rootScope.signInResult);
+                        console.log($rootScope.username);
                         setCredentials($scope.newSignIn.email, $scope.newSignIn.password);                                    
                         $window.location='/index.html#/landing';
                         
@@ -29,25 +31,7 @@ angular.module("appSignIn").controller("signInController", ['$scope', '$resource
             
         };
                                                             
-        $scope.signOut = function(){
-            console.log("in logout service")
-            console.log($rootScope.signInResult);
-            signInService.signOut($rootScope.signInResult)
-            .then(
-                    function(response){
-                        console.log(response);
-                        $rootScope.signOutResult=response;
-                        console.log($rootScope.signOutResult);
-                        clearCredentials();                                    
-                        $rootScope.login='SignedOut';
-                        $window.location='/index.html#/landing';
-                        },
-                    function(err){
-                        console.log('error logging out: ', err);
-                    }                 
-            )
-            
-        };
+
         
         var setCredentials = function(email, password) {
             var authdata = base64Service.encode(email + ':' + password);
@@ -61,6 +45,7 @@ angular.module("appSignIn").controller("signInController", ['$scope', '$resource
  
             $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
             $cookies.put('globals', $rootScope.globals);
+            console.log($rootScope.globals);
         };
  
         var clearCredentials = function() {
@@ -68,5 +53,5 @@ angular.module("appSignIn").controller("signInController", ['$scope', '$resource
             $cookies.remove('globals');
             $http.defaults.headers.common.Authorization = 'Basic';
         };  
-  init();  
+  //init();  
 }]);

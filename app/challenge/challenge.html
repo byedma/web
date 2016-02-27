@@ -1,1 +1,58 @@
-<div>Challenge Results</div>
+<div ng-app="appChallenge">
+    
+    <div class="w3-container w3-green" ng-controller="challengeController">
+      <h4>Challenges</h4>
+    </div>
+
+    <div ng-repeat="(challengeIndex, h) in challengeList">
+        <div class="w3-container w3-card-4">
+            <ul>
+                  <li>
+                    <label class="w3-label w3-text-black"><B>Title: </B>{{h.name}}</label>  
+                  </li>    
+                  <li>
+                      <label class="w3-label w3-text-black"><B>Introduction: </B>{{h.short_desc}}</label>  
+                  </li>
+                  <li>
+                    <label class="w3-label w3-text-black"><B>Description: </B>{{h.text}}</label>  
+                  </li>
+            </ul>
+                <br/>
+            <form name="challenge" ng-submit="subscribeToChallenge(h)">
+                <div class="form-group">
+<!--
+                    <div>
+                        <label class="w3-label w3-text-black"><B>Nick Name</B></label>  
+                        <input type="text" class="w3-input" id="name" ng-model="newChallengeDetails.nick_name" maxlength="50">
+                      </div>
+    -->                
+                  <button type="submit" class="w3-btn"><B>Subscribe</B></button>
+                  <button type="button" class="w3-btn" onclick=""><B>Recommend</B></button>
+                  <button type="button" ng-click="showChallengeReviews(challengeIndex, h)" class="w3-btn"><B>Show Reviews</B></button>        
+                </div>
+            </form><br/>
+
+                
+                <div ng-repeat="r in challengeReviewList" ng-show="isShowing(challengeIndex)">
+                    <h5>Review</h5>
+                    <div class="w3-container w3-bordered w3-striped w3-border w3-card-4" >
+                        
+                        <ul>
+                              <li>
+                                <label class="w3-label w3-text-black"><B>Name: </B>{{r.user_id}} {{r.active}}</label>  
+                              </li>    
+                              <li>
+                                  <label class="w3-label w3-text-black"><B>Rating: </B>{{r.rating}} {{r.active}}</label>  
+                              </li>
+                              <li>
+                                <label class="w3-label w3-text-black"><B>Comments: </B>{{r.comments}} {{r.active}}</label>  
+                              </li>
+                        </ul>                
+                    </div>    
+                </div>
+            <br/>
+                     
+        </div>
+    </div>
+    
+</div>
