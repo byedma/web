@@ -35,7 +35,7 @@ angular.module("appSignIn").controller("signInController", ['$scope', '$resource
         
         var setCredentials = function(email, password) {
             var authdata = base64Service.encode(email + ':' + password);
- 
+            
             $rootScope.globals = {
                 currentUser: {
                     email: email,

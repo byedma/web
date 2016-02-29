@@ -102,12 +102,36 @@
         background-repeat:no-repeat;
         background-position: right center;
     }
+/* blocks on landing page */
+
+
+    section {
+      margin : 2px !important;
+      padding: 2px !important;
+      padding-left : 1px !important;
+      padding-right: 1px !important;
+    }
+    section > div {
+      min-height : 100px;
+      margin : 2px !important;
+    }
+
+    .block1 {  min-height : 250px; background-color: #93B874}
+    .block2 {  min-height : 250px; background-color: #93B874}
+    .block3 {  min-height : 250px; background-color: #93B874}
+    .block4 {  min-height : 250px; background-color: #93B874}
+    .block5 {  min-height : 250px; background-color: #93B874}
+    .block6 {  min-height : 250px; background-color: #93B874}
+    .block7 {  min-height : 250px; background-color: #93B874}
+    .block8 {  min-height : 250px; background-color: #93B874}
+    .block9 {  min-height : 250px; background-color: #93B874}
+    
 
 /* slider */
 
     .slider {
-        width: 1000px;
-        height: 750px;
+        width: 1200px;
+        height: 800px;
         overflow: hidden;
         position: relative;
         background: #e6e6e6;

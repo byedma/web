@@ -1,4 +1,4 @@
-var appLanding = angular.module('appLanding', ['ngAnimate', 'ngRoute']);
+var appLanding = angular.module('appLanding', ['ngAnimate', 'ngMaterial', 'ngRoute']);
 
 
 appLanding.animation('.slide-animation', function () {
