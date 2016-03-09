@@ -16,10 +16,20 @@
                         <a href="#/hobby"><b>Hobbies</b></a>
                         <a href="#/routine"><b>Routines</b></a>
                         <a href="#/challenge"><b>Challenges</b></a>
-                        <a href="#/profile"><b>hhProfile</b></a>
+                        <a href="#/hhprofile" class="w3-sand"><b>hhProfile</b></a>
                         <a href="#/signin" ng-style="disableSignInButton" class="w3-orange"><b>Sign-In</b></a>
                         <a href="#/register" ng-style="disableRegisterButton" class="w3-cyan"><b>Register</b></a>
-                        <a href="#" ng-click="signOut()" ng-style="disableSignOutButton" class="w3-green"><b>Sign-Out</b></a>
+                        <!--<a href="#" ng-click="signOut()" ng-style="disableSignOutButton" class="w3-green"><b>Sign-Out</b></a>-->
+                        <div ng-show="login=='Success'" class="w3-dropdown-hover">
+                          <a class="w3-deep-purple w3-btn w3-round" href="#"><b>{{username}}</b><i class="fa fa-caret-down"></i></a>
+                            <div class="w3-dropdown-content w3-card-4"><b>
+                              <a href="#/profile" class="w3-cyan">Settings</a>
+                              <a href="#/profile" class="w3-orange">My Circles</a>      
+                              <a href="#" ng-click="signOut()" ng-style="disableSignOutButton" class="w3-lime">Sign out</a></b>
+                            </div>
+                            <a href="#"><i class="material-icons w3-large">notifications</i></a>
+                        </div>
+                        
                     <div id="searchdiv">
 						<input type=text id="searchInput" placeholder="Search" ng-model="searchStr" autofocus="true">						
 					</div>                        
@@ -37,5 +47,8 @@
 
             </div>
         
+        
+        
     </div>
 </div>
+

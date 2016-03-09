@@ -39,7 +39,7 @@ appData.service("routineService", function($http, $q){
     //retrieves Routine Services for customer's hhProfile
     this.routineServiceList = function(userid){
         console.log(userid);
-        var url = "http://localhost:8000/api/v1/routineservices/?customer_id="+ userid;
+        var url = "http://localhost:8000/api/v1/routineservices/?user_id="+ userid;
         console.log(url); 
         var defer = $q.defer();
         $http.get(url, {callback:"JSON_CALLBACK"}, {get:{method: "JSONP"}})
@@ -56,7 +56,7 @@ appData.service("routineService", function($http, $q){
 
     //Customer subscribes to a routine, routine service gets created.
     this.subscribeRoutine = function(routineservice){
-        var url = "http://localhost:8000/api/v1/routineservices/";
+        var url = "http://localhost:8000/api/v1/new_routineservices/";
         console.log(url);
 
         var defer = $q.defer();

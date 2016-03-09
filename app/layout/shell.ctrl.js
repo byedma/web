@@ -31,7 +31,7 @@ angular.module("appShell").controller("shellController", ['$scope','$rootScope',
                         console.log($rootScope.signOutResult);
                         $rootScope.login='SignedOut';
                         $rootScope.username='';
-                        $window.location='/index.html#/landing';
+                        $window.location='#/landing';
                         },
                     function(err){
                         console.log('error logging out: ', err);

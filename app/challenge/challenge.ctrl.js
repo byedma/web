@@ -17,21 +17,7 @@ angular.module("appChallenge").controller("challengeController", ['$scope', '$re
                     }
                 )            
     }
-    $scope.challengeServices = function(user_id){
-            console.log("in challenge service list service")
-            x = user_id;
-            challengeService.challengeServiceList(x)
-            .then(
-                    function(response){                        
-                        $scope.challengeServiceList=response;
-                        console.log($scope.challengeServiceList);                        
-                    },
-                    function(err){
-                        console.log('error retrieving challenge services for the user: ', err);
-                    }                 
-            )
-            
-        }     
+    
     $scope.challengeReviews = function(challengeid){
             console.log("in challenge review list service")
             console.log("challenge id in context is " + challengeid)

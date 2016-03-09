@@ -39,7 +39,7 @@ appData.service("habitService", function($http, $q){
     //retrieves Habit Services for customer's hhProfile
     this.habitServiceList = function(userid){
         console.log(userid);
-        var url = "http://localhost:8000/api/v1/habitservices/?customer_id="+ userid;
+        var url = "http://localhost:8000/api/v1/habitservices/?user_id="+ userid;
         console.log(url); 
         var defer = $q.defer();
         $http.get(url, {callback:"JSON_CALLBACK"}, {get:{method: "JSONP"}})
@@ -56,7 +56,7 @@ appData.service("habitService", function($http, $q){
 
     //Customer subscribes to a habit, habit service gets created.
     this.subscribeHabit = function(habitservice){
-        var url = "http://localhost:8000/api/v1/habitservices/";
+        var url = "http://localhost:8000/api/v1/new_habitservices/";
         console.log(url);
 
         var defer = $q.defer();

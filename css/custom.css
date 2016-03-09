@@ -27,6 +27,10 @@
         padding-right:30px;
 
     }
+    
+    .dropdowncustom{
+        width: 100%;
+    }
 
     #signindiv{
         font-weight: bold;
@@ -63,10 +67,11 @@
 
     .a{
         font-weight: bold;
+        font-family: Arial,Helvetica,freesans,sans-serif;
     }
 
     .container-fluid{
-        background-color:#e6e6a8;
+        background-color:#009688;
         width:100%;
         height:auto;
         color:black;

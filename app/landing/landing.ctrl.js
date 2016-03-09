@@ -40,7 +40,6 @@ angular.module("appLanding").controller("landingController", function($scope, $t
             
         };
 
-        
     $timeout($scope.init, 3000)
     
 });

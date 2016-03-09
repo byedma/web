@@ -56,9 +56,9 @@ angular.module("appProfile").controller("profileController", ['$scope', '$resour
                         $scope.userProfileCreateResult=response;
                         console.log($scope.userProfileCreateResult);
                         $rootScope.signInResult=response;
-                        $rootScope.login='success';
+                        $rootScope.login='Success';
                         console.log($rootScope.signInResult);
-                        $window.location='/index.html#/landing';
+                        $window.location='/landing';
                         
                     },
                     function(err){

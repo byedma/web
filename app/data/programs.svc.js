@@ -56,7 +56,7 @@ appData.service("programService", function($http, $q){
     
     //Customer subscribes to a program, program service gets created.
     this.subscribeProgram = function(programservice){
-        var url = "http://localhost:8000/api/v1/programservices/";
+        var url = "http://localhost:8000/api/v1/new_programservices/";
         console.log(url);
 
         var defer = $q.defer();

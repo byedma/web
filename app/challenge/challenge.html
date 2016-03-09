@@ -1,11 +1,42 @@
 <div ng-app="appChallenge">
     
     <div class="w3-container w3-green" ng-controller="challengeController">
-      <h4>Challenges</h4>
+      <h3>Challenges</h3>
     </div>
+    <nav class="w3-sidenav w3-collapse w3-teal" style="width:15%">
+      <h4>Search</h4>
+      <B>
+      <div class="w3-dropdown-hover w3-sand dropdowncustom">
+          <a class="w3-border" href="#">By Age Group<i class="fa fa-caret-down"></i></a>
+            <div class="w3-dropdown-content w3-khaki w3-card-4">
+              <a href="#">All</a>    
+              <a href="#">Age 19-25</a>
+              <a href="#">Age 26-32</a>
+              <a href="#">Age 33-38</a>
+              <a href="#">Age 39-45</a>
+              <a href="#">Age 46-55</a>
+              <a href="#">Age 55-65</a>
+              <a href="#">Age 65-72</a>                
+            </div>
+          </div>
+          <div class="w3-dropdown-hover w3-sand dropdowncustom">
+          <a class="w3-border" href="#">By Health Condition<i class="fa fa-caret-down"></i></a>
+            <div class="w3-dropdown-content w3-khaki w3-card-4">
+              <a href="#">Diabetes</a>
+              <a href="#">ADHD</a>
+                  
+            </div>
+          </div>
+      </B>
+      <h4>Sort</h4>
+      <B>
+          <a class="w3-sand w3-border" href="#">Highly Rated</a> 
+          <a class="w3-sand w3-border" href="#">Highly Subscribed</a> 
+      </B>
+    </nav>
 
-    <div ng-repeat="(challengeIndex, h) in challengeList">
-        <div class="w3-container w3-card-4">
+    <div style="margin-left:22%" ng-repeat="(challengeIndex, h) in challengeList">
+        <div class="w3-container w3-sand w3-card-4">
             <ul>
                   <li>
                     <label class="w3-label w3-text-black"><B>Title: </B>{{h.name}}</label>  
@@ -26,9 +57,9 @@
                         <input type="text" class="w3-input" id="name" ng-model="newChallengeDetails.nick_name" maxlength="50">
                       </div>
     -->                
-                  <button type="submit" class="w3-btn"><B>Subscribe</B></button>
-                  <button type="button" class="w3-btn" onclick=""><B>Recommend</B></button>
-                  <button type="button" ng-click="showChallengeReviews(challengeIndex, h)" class="w3-btn"><B>Show Reviews</B></button>        
+                  <button type="submit" class="w3-btn w3-round w3-hover-purple"><B>Subscribe</B></button>
+                  <button type="button" class="w3-btn w3-round w3-hover-purple" onclick=""><B>Recommend</B></button>
+                  <button type="button" ng-click="showChallengeReviews(challengeIndex, h)" class="w3-btn w3-round w3-hover-purple"><B>Show Reviews</B></button>        
                 </div>
             </form><br/>
 

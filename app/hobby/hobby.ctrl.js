@@ -17,21 +17,7 @@ angular.module("appHobby").controller("hobbyController", ['$scope', '$resource',
                     }
                 )            
     }
-    $scope.hobbyServices = function(user_id){
-            console.log("in hobby service list service")
-            x = user_id;
-            hobbyService.hobbyServiceList(x)
-            .then(
-                    function(response){                        
-                        $scope.hobbyServiceList=response;
-                        console.log($scope.hobbyServiceList);                        
-                    },
-                    function(err){
-                        console.log('error retrieving hobby services for the user: ', err);
-                    }                 
-            )
-            
-        }     
+    
     $scope.hobbyReviews = function(hobbyid){
             console.log("in hobby review list service")
             console.log("hobby id in context is " + hobbyid)

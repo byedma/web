@@ -1,4 +1,4 @@
-angular.module("appHabit").controller("habitController", ['$scope', '$resource', 'habitService', function($scope, $resource, habitService){
+angular.module("appHabit").controller("habitController", ['$scope', '$resource', '$rootScope', 'habitService', function($scope, $resource, $rootScope, habitService){
 
     $scope.habitList = null;
     $scope.habitServiceList = null;
@@ -17,21 +17,7 @@ angular.module("appHabit").controller("habitController", ['$scope', '$resource',
                     }
                 )            
     }
-    $scope.habitServices = function(user_id){
-            console.log("in habit service list service for the user")
-            x = user_id;
-            habitService.habitServiceList(x)
-            .then(
-                    function(response){                        
-                        $scope.habitServiceList=response;
-                        console.log($scope.habitServiceList);                        
-                    },
-                    function(err){
-                        console.log('error retrieving habit service list: ', err);
-                    }                 
-            )
-            
-        }     
+
     $scope.habitReviews = function(habitid){
             console.log("in habit review list service")
             console.log("habit id in context is " + habitid)
@@ -47,14 +33,15 @@ angular.module("appHabit").controller("habitController", ['$scope', '$resource',
             )
             
         }  
+    
     $scope.newHabitServiceDetails={};
     
     $scope.subscribeToHabit = function(hab){
-        $scope.newHabitServiceDetails.habit_id = 2;
-        $scope.newHabitServiceDetails.user_id = 6;
-        $scope.newHabitServiceDetails.nick_name = "just a joke";
+        $scope.newHabitServiceDetails.habit_id = hab.id;
+        $scope.newHabitServiceDetails.user_id = $rootScope.signInResult.id;
+        $scope.newHabitServiceDetails.nick_name = "test";
         $scope.newHabitServiceDetails.status = "E";
-        $scope.newHabitServiceDetails.end_date = "2016-02-19"
+        $scope.newHabitServiceDetails.end_date = "2017-02-19"
         console.log($scope.newHabitServiceDetails);    
         //fields = ('id', 'habit_id', 'user_id', 'nick_name', 'status', 'end_date', 'creation_timestamp')
         habitService.subscribeHabit($scope.newHabitServiceDetails)

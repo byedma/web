@@ -39,7 +39,7 @@ appData.service("hobbyService", function($http, $q){
     //retrieves Hobby Services for customer's hhProfile
     this.hobbyServiceList = function(userid){
         console.log(userid);
-        var url = "http://localhost:8000/api/v1/hobbyservices/?customer_id="+ userid;
+        var url = "http://localhost:8000/api/v1/hobbyservices/?user_id="+ userid;
         console.log(url); 
         var defer = $q.defer();
         $http.get(url, {callback:"JSON_CALLBACK"}, {get:{method: "JSONP"}})
@@ -56,7 +56,7 @@ appData.service("hobbyService", function($http, $q){
 
     //Customer subscribes to a hobby, hobby service gets created.
     this.subscribeHobby = function(hobbyservice){
-        var url = "http://localhost:8000/api/v1/hobbyservices/";
+        var url = "http://localhost:8000/api/v1/new_hobbyservices/";
         console.log(url);
 
         var defer = $q.defer();

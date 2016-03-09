@@ -16,12 +16,13 @@ angular.module("appSignIn").controller("signInController", ['$scope', '$resource
                         $rootScope.disableSignOutButton = {visibility: 'visible'};
                         $rootScope.disableRegisterButton = {visibility: 'hidden'};                         
                         $rootScope.signInResult=response;
-                        $rootScope.login='success';
+                        $rootScope.login='Success';
                         $rootScope.username=$rootScope.signInResult.first_name +" " +$rootScope.signInResult.last_name;
                         console.log($rootScope.signInResult);
                         console.log($rootScope.username);
-                        setCredentials($scope.newSignIn.email, $scope.newSignIn.password);                                    
-                        $window.location='/index.html#/landing';
+                        setCredentials($scope.newSignIn.email, $scope.newSignIn.password);
+                        if ($rootScope.redirectFrom != null) {$window.location='/#'+$rootScope.redirectFrom;}
+                        else { $window.location='/#/landing';}
                         
                     },
                     function(err){

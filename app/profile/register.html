@@ -1,39 +1,40 @@
 <div ng-app="appProfile">
 
     <div class="w3-container w3-green" ng-controller="profileController">
-      <h4>Register</h4>
+      <h3>Register</h3>
     </div>    
     
-    <div class="userinputform">
-        <div class="w3-container  w3-card-4">
+    <div class="w3-container w3-card-4 userinputform">
+
         <form name="createUserForm" ng-submit="createUserProfile()">
             <div class="form-group">   
               <div>
-                <label class="w3-label w3-text-black"><B>First Name</B></label>  
+                <label class="w3-label w3-text-white"><B>First Name</B></label>  
                 <input type="text" class="w3-input" name="userfirstname" id="firstname" required="true" ng-model="newUserProfile.first_name" maxlength="50">
               </div>        
               <div>
-                <label class="w3-label w3-text-black"><B>Last Name</B></label>  
+                <label class="w3-label w3-text-white"><B>Last Name</B></label>  
                 <input type="text" class="w3-input" name="userlastname" id="lastname" required="true" ng-model="newUserProfile.last_name" maxlength="50">
               </div>
               <div>
-                <label class="w3-label w3-text-black"><B>Middle Name</B></label>  
+                <label class="w3-label w3-text-white"><B>Middle Name</B></label>  
                 <input type="text" class="w3-input" id="middlename" ng-model="newUserProfile.middle_name" maxlength="25">
               </div>
               <div>
-                <label class="w3-label w3-text-black"><B>Password</B></label>  
+                <label class="w3-label w3-text-white"><B>Password</B></label>  
                 <input type="password" class="w3-input" id="password" required="true" ng-model="newUserProfile.password" maxlength="25">
               </div> 
               <div>
-                <label class="w3-label w3-text-black"><B>Confirm Password</B></label>  
+                <label class="w3-label w3-text-white"><B>Confirm Password</B></label>  
                 <input type="password" class="w3-input" id="title" required="true" ng-model="newUserProfile.confirm_password" maxlength="25">
               </div>             
               <div>
-              <label class="w3-label w3-text-black"><B>Email Address</B></label>  
-                <input type="email" class="w3-input w3-validate" name="useremail" id="email" required="true" ng-model="newUserProfile.email" maxlength="50">
+              <label class="w3-label w3-text-white"><B>Email Address</B></label>  
+                <input type="email" validate-email class="w3-input w3-validate" name="useremail" id="email" required="true" ng-model="newUserProfile.email" maxlength="50">
               </div>
+                <br/>
                 <div>
-                <label class="w3-label w3-text-black"><B>Title</B></label>  
+                <label class="w3-label w3-text-white"><B>Title</B></label>  
                 <select class="form-control" id="title" ng-model="newUserProfile.title">
                 <option value="MRS">Mrs</option>
                 <option value="MR" selected>Mr</option>
@@ -41,8 +42,9 @@
                 <option value="OTH">Others</option>
               </select>
               </div>
+                <br/>
               <div>
-            <label class="w3-label w3-text-black"><B>Gender</B></label>  
+            <label class="w3-label w3-text-white"><B>Gender</B></label>  
                   <select class="form-control" id="gender" ng-model="newUserProfile.gender">
                     <option value="M" selected>Male</option>
                     <option value="F">Female</option>
@@ -51,10 +53,11 @@
               </div>            
 
                 <br/>
-            <button type="submit" class="w3-btn">Submit</button>
+            <button type="submit" class="w3-btn w3-round w3-hover-purple">Submit</button>
             </div>
-        </form>       
-        </div>
+        </form>
+            <br/>
+
 
     </div> 
 

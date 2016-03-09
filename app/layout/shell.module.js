@@ -67,7 +67,14 @@ appShell.config(function ($routeProvider) {
             controller: 'profileController'
             
         })
-    
+
+        .when('/hhprofile', {
+        
+            templateUrl: 'app/hhprofile/hhprofile.html',
+            controller: 'hhprofileController'
+            
+        })
+        
         .otherwise({
         redirectTo: "/landing"
         

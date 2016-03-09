@@ -17,21 +17,7 @@ angular.module("appRoutine").controller("routineController", ['$scope', '$resour
                     }
                 )            
     }
-    $scope.routineServices = function(user_id){
-            console.log("in routine service list service for the user")
-            x = user_id;
-            routineService.routineServiceList(x)
-            .then(
-                    function(response){                        
-                        $scope.routineServiceList=response;
-                        console.log($scope.routineServiceList);                        
-                    },
-                    function(err){
-                        console.log('error retrieving routine service list: ', err);
-                    }                 
-            )
-            
-        }     
+    
     $scope.routineReviews = function(routineid){
             console.log("in routine review list service")
             console.log("routine id in context is " + routineid)

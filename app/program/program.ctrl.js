@@ -17,21 +17,7 @@ angular.module("appProgram").controller("programController", ['$scope', '$resour
                     }
                 )            
     }
-    $scope.programServices = function(user_id){
-            console.log("in program service list service")
-            x = user_id;
-            programService.programServiceList(x)
-            .then(
-                    function(response){                        
-                        $scope.programServiceList=response;
-                        console.log($scope.programServiceList);                        
-                    },
-                    function(err){
-                        console.log('error retrieving program services for the user: ', err);
-                    }                 
-            )
-            
-        }     
+    
     $scope.programReviews = function(programid){
             console.log("in program review list service")
             console.log("program id in context is " + programid)

@@ -1,0 +1,172 @@
+<div ng-app="appHHProfile">
+    <div class="w3-container w3-green" ng-controller="hhprofileController">
+      <h3>Happy Healthy Profile</h3>
+    </div>
+    
+<!--    <nav class="w3-sidenav w3-teal" style="width:15%">
+      <h4>Subscriptions</h4>
+      <B>
+              <a class="w3-sand w3-border" ng-click="loadSubsciptions('habit')" href=".">Habits</a>    
+              <a class="w3-sand w3-border" ng-click="loadSubsciptions('hobby')" href=".">Hobbies</a>
+              <a class="w3-sand w3-border" ng-click="loadSubsciptions('routine')" href=".">Routines</a>
+              <a class="w3-sand w3-border" ng-click="loadSubsciptions('challenge')" href=".">Challenges</a>
+              <a class="w3-sand w3-border" ng-click="loadSubsciptions('program')" href=".">Programs</a>
+      </B>
+    </nav>-->
+
+    <div>
+    <div class="w3-card w3-cyan"><h4>Manage Subscriptions</h4></div>
+    <form name="SubscriptionControl">
+        <div>
+              <button class="w3-btn w3-round w3-hover-purple w3-black w3-border" type="button" ng-click="loadSubscriptions('habit')">Habits</button>    
+              <button class="w3-btn w3-round w3-hover-purple  w3-black w3-border" type="button" ng-click="loadSubscriptions('hobby')">Hobbies</button>
+              <button class="w3-btn w3-round w3-hover-purple  w3-black w3-border" type="button" ng-click="loadSubscriptions('routine')">Routines</button>
+              <button class="w3-btn w3-round w3-hover-purple  w3-black w3-border" type="button" ng-click="loadSubscriptions('challenge')">Challenges</button>
+              <button class="w3-btn w3-round w3-hover-purple  w3-black w3-border" type="button" ng-click="loadSubscriptions('program')">Programs</button>    
+        </div>
+    </form>    
+    
+    <!--shown when the habits button under the subscriptions is clicked, or on default page load-->
+    <div class="w3-card w3-sand" ng-cloak ng-show="divShow=='myHabits'">
+    <div class="w3-cyan">
+      <h4>Habits</h4>
+    </div>        
+        <table class="w3-table w3-bordered w3-striped w3-border w3-hoverable w3-card-4">
+            <tr class="w3-blue"><th>Name</th><th>Action</th></tr>
+            <tr ng-repeat="h in habitServiceList">
+                <td>{{h.habit_id.name}}</td>
+                <td>
+                    <button class="w3-btn w3-round w3-hover-purple">Update Progress</button>
+                    <button class="w3-btn w3-round w3-hover-purple">Post a Review</button>
+                    <button class="w3-btn w3-round w3-hover-purple">Refer</button>
+                    <button class="w3-btn w3-round w3-hover-purple" ng-click="unsubscribeToHabit(h)">Unsubscribe</button>
+                </td>
+            </tr>
+        
+        </table>
+        <br/>        
+        
+    </div>
+    
+    
+    <!--shown when the hobbys button under the subscriptions is clicked -->
+
+    <div class="w3-card w3-sand" ng-cloak ng-show="divShow=='myHobbys'">
+    <div class="w3-cyan">
+      <h4>Hobbies</h4>
+    </div>        
+        <table class="w3-table w3-bordered w3-striped w3-border w3-hoverable w3-card-4">
+            <tr class="w3-blue"><th>Name</th><th>Action</th></tr>
+            <tr ng-repeat="b in hobbyServiceList">
+                <td>{{b.hobby_id.name}}</td>
+                <td>
+                    <button class="w3-btn w3-round w3-hover-purple">Update Progress</button>
+                    <button class="w3-btn w3-round w3-hover-purple">Post a Review</button>
+                    <button class="w3-btn w3-round w3-hover-purple">Refer</button>
+                    <button class="w3-btn w3-round w3-hover-purple" ng-click="unsubscribeToHobby(m)">Unsubscribe</button>
+                </td>
+            </tr>
+        
+        </table>
+        <br/>        
+        
+    </div>
+
+    <!--shown when the routines button under the subscriptions is clicked -->
+
+    <div class="w3-card w3-sand" ng-cloak ng-show="divShow=='myRoutines'">
+    <div class="w3-cyan">
+      <h4>Routines</h4>
+    </div>        
+        <table class="w3-table w3-bordered w3-striped w3-border w3-hoverable w3-card-4">
+            <tr class="w3-blue"><th>Name</th><th>Action</th></tr>
+            <tr ng-repeat="r in routineServiceList">
+                <td>{{r.routine_id.name}}</td>
+                <td>
+                    <button class="w3-btn w3-round w3-hover-purple">Update Progress</button>
+                    <button class="w3-btn w3-round w3-hover-purple">Post a Review</button>
+                    <button class="w3-btn w3-round w3-hover-purple">Refer</button>
+                    <button class="w3-btn w3-round w3-hover-purple" ng-click="unsubscribeToRoutine(r)">Unsubscribe</button>
+                </td>
+            </tr>
+        
+        </table>
+        <br/>        
+        
+    </div>
+    
+    <!--shown when the challenges button under the subscriptions is clicked -->
+
+    <div class="w3-card w3-sand" ng-cloak ng-show="divShow=='myChallenges'">
+    <div class="w3-cyan">
+      <h4>Challenges</h4>
+    </div>        
+        <table class="w3-table w3-bordered w3-striped w3-border w3-hoverable w3-card-4">
+            <tr class="w3-blue"><th>Name</th><th>Action</th></tr>
+            <tr ng-repeat="c in challengeServiceList">
+                <td>{{c.challenge_id.name}}</td>
+                <td>
+                    <button class="w3-btn w3-round w3-hover-purple">Update Progress</button>
+                    <button class="w3-btn w3-round w3-hover-purple">Post a Review</button>
+                    <button class="w3-btn w3-round w3-hover-purple">Refer</button>
+                    <button class="w3-btn w3-round w3-hover-purple" ng-click="unsubscribeToChallenge(c)">Unsubscribe</button>
+                </td>
+            </tr>
+        
+        </table>
+        <br/>        
+        
+    </div>
+    
+    <!--shown when the programs button under the subscriptions is clicked -->
+
+    <div class="w3-card w3-sand" ng-cloak ng-show="divShow=='myPrograms'">
+    <div class="w3-cyan">
+      <h4>Programs</h4>
+    </div>        
+        <table class="w3-table w3-bordered w3-striped w3-border w3-hoverable w3-card-4">
+            <tr class="w3-blue"><th>Name</th><th>Action</th></tr>
+            <tr ng-repeat="p in programServiceList">
+                <td>{{p.program_id.name}}</td>
+                <td>
+                    <button class="w3-btn w3-round w3-hover-purple">Update Progress</button>
+                    <button class="w3-btn w3-round w3-hover-purple">Post a Review</button>
+                    <button class="w3-btn w3-round w3-hover-purple">Refer</button>
+                    <button class="w3-btn w3-round w3-hover-purple" ng-click="unsubscribeToProgram(p)">Unsubscribe</button>
+                </td>
+            </tr>
+        
+        </table>
+        <br/>        
+        
+    </div>    
+    <div ui-calendar ng-model="eventSources"></div>
+        
+<!--    <div>
+        <div class="w3-card w3-cyan"><h4>Calendar</h4></div>
+        <form name="CalendarControl">
+            <div>
+                  <button class="w3-btn w3-round w3-hover-purple w3-black w3-border" type="button" ng-click="loadCalendar('Weekly')">Weekly</button>    
+                  <button class="w3-btn w3-round w3-hover-purple  w3-black w3-border" type="button" ng-click="loadCalendar('Monthly')">Monthly</button>
+                  <button class="w3-btn w3-round w3-hover-purple  w3-black w3-border" type="button" ng-click="loadCalendar('RoutinesOnly')">Routines Only</button>
+                  <button class="w3-btn w3-round w3-hover-purple  w3-black w3-border" type="button" ng-click="loadCalendar('challengeOnly')">Challenges Only</button>    
+            </div>
+        </form>
+        <div class="w3-card w3-sand" ng-cloak ng-show="divShow=='myWeekly'">
+            <div class="w3-cyan">
+              <h4>Habits</h4>
+            </div>        
+        
+            <table class="w3-table w3-bordered w3-striped w3-border w3-hoverable w3-card-4">
+
+
+
+            </table>
+        <br/>        
+        
+        </div>  
+        
+        
+    </div> -->   
+</div>    
+</div>    

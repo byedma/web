@@ -56,7 +56,7 @@ appData.service("challengeService", function($http, $q){
     
     //Customer subscribes to a challenge, challenge service gets created.
     this.subscribeChallenge = function(challengeservice){
-        var url = "http://localhost:8000/api/v1/challengeservices/";
+        var url = "http://localhost:8000/api/v1/new_challengeservices/";
         console.log(url);
 
         var defer = $q.defer();

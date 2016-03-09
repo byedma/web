@@ -28,7 +28,7 @@
             <input type="date" class="w3-date w3-validate" id="dateofbirth" ng-model="userProfile.date_of_birth">
           </div>
             <br/>
-        <button type="submit" class="w3-btn">Update Profile</button>
+        <button type="submit" class="w3-btn w3-round w3-hover-purple">Update Profile</button>
         </div>
     </form>       
     </div>
@@ -42,7 +42,7 @@
   <h4>Administer Circles</h4>
 </div>    
 <br/>  
-<Button ng-model="showNewCircleForm" ng-click="showCircleCreateForm()" class="w3-btn">Create New Circle</Button><br/>
+<Button ng-model="showNewCircleForm" ng-click="showCircleCreateForm()" class="w3-btn w3-round w3-hover-purple">Create New Circle</Button><br/>
 <br/>
         <div class="w3-container w3-bordered w3-striped w3-border w3-card-4" ng-show="showNewCircleForm">
             <form name="createCircleForm" ng-submit="createCircle()">
@@ -67,7 +67,7 @@
                         <input type="number" class="w3-input" id="maxMembers" ng-model="newCircleDetails.max_number_members" maxlength="50">
                       </div>                    
                     <br/>
-                <button type="submit" class="w3-btn"><B>Submit</B></button>
+                <button type="submit" class="w3-btn w3-round w3-hover-purple"><B>Submit</B></button>
                 </div>            
             
         </form>
@@ -84,9 +84,9 @@
                 <td>{{c.members_can_refer}}</td>
                 <td>{{c.max_number_members}}</td>
                 <td>
-                    <button class="w3-btn" ng-click="updateCircle(c)">Update</button>
-                    <button class="w3-btn" ng-model="showCircleMemberForm" ng-click="showCircleMembers(c)">Manage Members</button>
-                    <button class="w3-btn" ng-click="deleteCircle(c)">Delete</button>
+                    <button class="w3-btn w3-round w3-hover-purple" ng-click="updateCircle(c)">Update</button>
+                    <button class="w3-btn w3-round w3-hover-purple" ng-model="showCircleMemberForm" ng-click="showCircleMembers(c)">Manage Members</button>
+                    <button class="w3-btn w3-round w3-hover-purple" ng-click="deleteCircle(c)">Delete</button>
                 </td>
             </tr>
         
@@ -110,8 +110,8 @@
                 <td>{{m.role}}</td>
                 <td>{{m.status}}</td>
                 <td>
-                    <button class="w3-btn">Update</button>
-                    <button class="w3-btn" ng-click="deleteCircleMember(m)">Delete</button>
+                    <button class="w3-btn w3-round w3-hover-purple">Update</button>
+                    <button class="w3-btn w3-round w3-hover-purple" ng-click="deleteCircleMember(m)">Delete</button>
                 </td>
             </tr>
         
