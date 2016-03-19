@@ -199,7 +199,11 @@ angular.module("appProfile").controller("profileController", ['$scope', '$resour
 //                        console.log('error deleting the circle: ', err);
 //                    }            
 //            )
-//        }          
+//        }
+        
+
+        
+        
     init();
     
     

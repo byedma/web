@@ -1,0 +1,190 @@
+<!--<div ng-app="appProgram">
+    <div class="w3-container w3-green" ng-controller="programController">
+      <h3>Programs</h3>
+    </div>
+    <nav class="w3-sidenav w3-collapse w3-teal" style="width:11%">
+      <h4>Search</h4>
+      <B>
+      <div class="w3-dropdown-hover w3-sand dropdowncustom">
+          <a class="w3-border" href="#">By Age Group<i class="fa fa-caret-down"></i></a>
+            <div class="w3-dropdown-content w3-khaki w3-card-4">
+              <a href="#">All</a>    
+              <a href="#">Age 19-25</a>
+              <a href="#">Age 26-32</a>
+              <a href="#">Age 33-38</a>
+              <a href="#">Age 39-45</a>
+              <a href="#">Age 46-55</a>
+              <a href="#">Age 55-65</a>
+              <a href="#">Age 65-72</a>                
+            </div>
+          </div>
+          <div class="w3-dropdown-hover w3-sand dropdowncustom">
+          <a class="w3-border" href="#">By Health Condition<i class="fa fa-caret-down"></i></a>
+            <div class="w3-dropdown-content w3-khaki w3-card-4">
+              <a href="#">Diabetes</a>
+              <a href="#">ADHD</a>
+                  
+            </div>
+          </div>
+      </B>
+      <h4>Sort</h4>
+      <B>
+          <a class="w3-sand w3-border" href="#">Highly Rated</a> 
+          <a class="w3-sand w3-border" href="#">Highly Subscribed</a> 
+      </B>
+    </nav>
+
+    <div style="margin-left:20%">
+        <div class="w3-container w3-sand w3-card-4">
+                <li class="crop">
+                    <img src="{{programInFocus.picture}}"/>
+                </li>
+                <li>
+                    <label class="w3-label w3-text-black"><B>Title: </B>{{programInFocus.name}}</label>  
+                  </li>    
+                  <li>
+                      <label class="w3-label w3-text-black"><B>Introduction: </B>{{programInFocus.short_desc}}</label>  
+                  </li>
+                  <li>
+                    <label class="w3-label w3-text-black"><B>Description: </B>{{programInFocus.text}}</label>  
+                  </li>            
+        </div>
+    </div>
+    
+    
+</div>  -->  
+
+   <md-dialog aria-label="Mango (Fruit)">
+
+       <form>
+                <md-toolbar>
+                  <div class="md-toolbar-tools w3-green">
+                    <h2>{{h.name}}</h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" ng-click="cancel()">
+                      <i class="material-icons w3-large">close</i>
+                    </md-button>
+                  </div>
+                </md-toolbar>
+                <md-dialog-content style="max-width:800px;max-height:810px;">
+                  <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="Habits" ng-if="habitsInFocus.length>0">
+                      <md-content class="md-padding">
+                            <div ng-repeat="h in habitsInFocus">
+
+                                        <div class="w3-container w3-card-4 w3-sand">
+                                            <ul>  
+                                                <li class="crop">
+                                                    <img src="{{h.picture}}"/>
+                                                </li>
+
+                                                  <li>
+                                                    <label class="w3-label w3-text-black"><B>Title: </B>{{h.name}}</label>  
+                                                  </li>    
+                                                  <li>
+                                                      <label class="w3-label w3-text-black"><B>Introduction: </B>{{h.short_desc}}</label>  
+                                                  </li>
+                                                  <li>
+                                                    <label class="w3-label w3-text-black"><B>Description: </B>{{h.text}}</label>  
+                                                  </li>
+                                            </ul>
+                                                <br/>
+                                        </div>
+                                <br/>
+                                </div>
+                      </md-content>
+                    </md-tab>
+                    <md-tab label="Hobbies" ng-if="hobbysInFocus.length>0">
+                      <md-content class="md-padding">
+                            <div ng-repeat="h in hobbysInFocus">
+
+                                        <div class="w3-container w3-card-4 w3-sand">
+                                            <ul>  
+                                                <li class="crop">
+                                                    <img src="{{h.picture}}"/>
+                                                </li>
+
+                                                  <li>
+                                                    <label class="w3-label w3-text-black"><B>Title: </B>{{h.name}}</label>  
+                                                  </li>    
+                                                  <li>
+                                                      <label class="w3-label w3-text-black"><B>Introduction: </B>{{h.short_desc}}</label>  
+                                                  </li>
+                                                  <li>
+                                                    <label class="w3-label w3-text-black"><B>Description: </B>{{h.text}}</label>  
+                                                  </li>
+                                            </ul>
+                                                <br/>
+                                        </div>
+                                <br/>
+                                </div>
+                      </md-content>
+                    </md-tab>
+                    <md-tab label="Routines" ng-if="routinesInFocus.length>0">
+                      <md-content class="md-padding">
+                            <div ng-repeat="h in routinesInFocus">
+
+                                        <div class="w3-container w3-card-4 w3-sand">
+                                            <ul>  
+                                                <li class="crop">
+                                                    <img src="{{h.picture}}"/>
+                                                </li>
+
+                                                  <li>
+                                                    <label class="w3-label w3-text-black"><B>Title: </B>{{h.name}}</label>  
+                                                  </li>    
+                                                  <li>
+                                                      <label class="w3-label w3-text-black"><B>Introduction: </B>{{h.short_desc}}</label>  
+                                                  </li>
+                                                  <li>
+                                                    <label class="w3-label w3-text-black"><B>Description: </B>{{h.text}}</label>  
+                                                  </li>
+                                            </ul>
+                                                <br/>
+                                        </div>
+                                <br/>
+                                </div>
+                      </md-content>
+                    </md-tab>
+                    <md-tab label="Challenges" ng-if="challengesInFocus.length()>0">
+                      <md-content class="md-padding">
+                            <div ng-repeat="h in challengesInFocus">
+
+                                        <div class="w3-container w3-card-4 w3-sand">
+                                            <ul>  
+                                                <li class="crop">
+                                                    <img src="{{h.picture}}"/>
+                                                </li>
+
+                                                  <li>
+                                                    <label class="w3-label w3-text-black"><B>Title: </B>{{h.name}}</label>  
+                                                  </li>    
+                                                  <li>
+                                                      <label class="w3-label w3-text-black"><B>Introduction: </B>{{h.short_desc}}</label>  
+                                                  </li>
+                                                  <li>
+                                                    <label class="w3-label w3-text-black"><B>Description: </B>{{h.text}}</label>  
+                                                  </li>
+                                            </ul>
+                                                <br/>
+                                        </div>
+                                <br/>
+                                </div>
+                      </md-content>
+                    </md-tab>  
+                  </md-tabs>
+                </md-dialog-content>
+                <md-dialog-actions layout="row">
+                  <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" md-autofocus>
+                    More on Wikipedia
+                  </md-button>
+                  <span flex></span>
+                  <md-button ng-click="answer('not useful')" >
+                    Not Useful
+                  </md-button>
+                  <md-button ng-click="answer('useful')" style="margin-right:20px;" >
+                    Useful
+                  </md-button>
+                </md-dialog-actions>
+          </form>
+    </md-dialog> 

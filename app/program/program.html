@@ -3,7 +3,7 @@
     <div class="w3-container w3-green" ng-controller="programController">
       <h3>Programs</h3>
     </div>
-    <nav class="w3-sidenav w3-collapse w3-teal" style="width:15%">
+    <nav class="w3-sidenav w3-collapse w3-teal" style="width:11%">
       <h4>Search</h4>
       <B>
       <div class="w3-dropdown-hover w3-sand dropdowncustom">
@@ -35,10 +35,13 @@
       </B>
     </nav>
 
-    <div style="margin-left:22%"  ng-repeat="(programIndex, h) in programList">
+    <div style="margin-left:20%"  ng-repeat="(programIndex, h) in programList">
         <div class="w3-container w3-sand w3-card-4">
             <ul>
-                  <li>
+                <li class="crop">
+                    <img src="{{h.picture}}"/>
+                </li>
+                <li>
                     <label class="w3-label w3-text-black"><B>Title: </B>{{h.name}}</label>  
                   </li>    
                   <li>
@@ -59,7 +62,8 @@
     -->                
                   <button type="submit" class="w3-btn w3-round w3-hover-purple"><B>Subscribe</B></button>
                   <button type="button" class="w3-btn w3-round w3-hover-purple" onclick=""><B>Recommend</B></button>
-                  <button type="button" ng-click="showProgramReviews(programIndex, h)" class="w3-btn w3-round w3-hover-purple"><B>Show Reviews</B></button>        
+                  <button type="button" class="w3-btn w3-round w3-hover-purple" ng-click="showProgramReviews(programIndex, h)" ><B>Show Reviews</B></button>
+                  <button type="button" class="w3-btn w3-round w3-hover-purple" ng-click="showTabDialog($event, h)"><B>Details</B></button>
                 </div>
             </form><br/>
 

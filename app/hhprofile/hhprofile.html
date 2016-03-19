@@ -3,29 +3,65 @@
       <h3>Happy Healthy Profile</h3>
     </div>
     
-<!--    <nav class="w3-sidenav w3-teal" style="width:15%">
-      <h4>Subscriptions</h4>
-      <B>
-              <a class="w3-sand w3-border" ng-click="loadSubsciptions('habit')" href=".">Habits</a>    
-              <a class="w3-sand w3-border" ng-click="loadSubsciptions('hobby')" href=".">Hobbies</a>
-              <a class="w3-sand w3-border" ng-click="loadSubsciptions('routine')" href=".">Routines</a>
-              <a class="w3-sand w3-border" ng-click="loadSubsciptions('challenge')" href=".">Challenges</a>
-              <a class="w3-sand w3-border" ng-click="loadSubsciptions('program')" href=".">Programs</a>
-      </B>
-    </nav>-->
+    <div class="w3-container w3-cyan">
+      <h4>Body Mass Index Profile</h4>
+    </div>
 
     <div>
-    <div class="w3-card w3-cyan"><h4>Manage Subscriptions</h4></div>
+        <div class="w3-container w3-card-4 userinputform w3-cyan">
+                <form name="physicalProfileForm" ng-submit="updatePhysicalProfile()">
+                    <div class="form-group">
+
+                      <div>
+                        <label class="w3-label w3-text-black"><B>Height(In Inches)</B></label>  
+                        <input type="number" min="36" max="96" class="w3-input" id="height" ng-bind ng-model="physicalProfile.height">
+                      </div>    
+                      <div>
+                        <label class="w3-label w3-text-black"><B>Weight(In Kilograms)</B></label>  
+                        <input type="number" min="20" max="200" class="w3-input" id="weight" ng-model="physicalProfile.weight">
+                      </div>
+                      <div>
+                        <label class="w3-label w3-text-black"><B>Total Cholestrol</B></label>  
+                        <input type="number" min="20" max="200" class="w3-input" id="cholestrol" ng-model="physicalProfile.cholestrol">
+                      </div>
+<!--                      <div>
+                        <label class="w3-label w3-text-black"><B>Blood Pressure(Top)</B></label>  
+                        <input type="number" min="20" max="200" class="w3-input" id="bphigh" ng-model="physicalProfile.bphigh">
+                      </div>                       
+                      <div>
+                        <label class="w3-label w3-text-black"><B>Blood Pressure(Bottom)</B></label>  
+                        <input type="number" min="20" max="200" class="w3-input" id="bphigh" ng-model="physicalProfile.bplow">
+                      </div>-->
+                        <br/>
+                    <button type="submit" class="w3-btn w3-round w3-hover-purple" ng-click="updateAndGetBMI()">Update</button>
+                    </div>
+                </form>
+            <br/>
+
+        </div>
+        <div class="w3-container w3-white w3-card">
+        <div style="display:inline-block;">
+            <div class="w3-white" google-chart chart="BMIChartObject" style="height:400x; display:inline-block; margin:10px 25px 10px 25px"></div>
+            <div class="w3-white" google-chart chart="CholestrolChartObject" style="height:400x; display:inline-block; margin:10px 25px 10px 25px"></div>
+        </div>
+        </div>    
+    </div>
+    
+    <div>
+    <div class="w3-container w3-card w3-cyan"><h4>Manage Subscriptions</h4></div>
+    <div class="w3-container w3-card w3-cyan">    
     <form name="SubscriptionControl">
-        <div>
+        <div class="w3-cyan">
+              <br/>       
               <button class="w3-btn w3-round w3-hover-purple w3-black w3-border" type="button" ng-click="loadSubscriptions('habit')">Habits</button>    
               <button class="w3-btn w3-round w3-hover-purple  w3-black w3-border" type="button" ng-click="loadSubscriptions('hobby')">Hobbies</button>
               <button class="w3-btn w3-round w3-hover-purple  w3-black w3-border" type="button" ng-click="loadSubscriptions('routine')">Routines</button>
               <button class="w3-btn w3-round w3-hover-purple  w3-black w3-border" type="button" ng-click="loadSubscriptions('challenge')">Challenges</button>
-              <button class="w3-btn w3-round w3-hover-purple  w3-black w3-border" type="button" ng-click="loadSubscriptions('program')">Programs</button>    
+              <button class="w3-btn w3-round w3-hover-purple  w3-black w3-border" type="button" ng-click="loadSubscriptions('program')">Programs</button>
+            <br/><br/>
         </div>
     </form>    
-    
+        </div>
     <!--shown when the habits button under the subscriptions is clicked, or on default page load-->
     <div class="w3-card w3-sand" ng-cloak ng-show="divShow=='myHabits'">
     <div class="w3-cyan">
@@ -121,7 +157,7 @@
     <!--shown when the programs button under the subscriptions is clicked -->
 
     <div class="w3-card w3-sand" ng-cloak ng-show="divShow=='myPrograms'">
-    <div class="w3-cyan">
+    <div class="w3-cyan">   
       <h4>Programs</h4>
     </div>        
         <table class="w3-table w3-bordered w3-striped w3-border w3-hoverable w3-card-4">
@@ -140,7 +176,7 @@
         <br/>        
         
     </div>    
-    <div ui-calendar ng-model="eventSources"></div>
+    <div class="w3-cyan" ui-calendar ng-model="eventSources"></div>
         
 <!--    <div>
         <div class="w3-card w3-cyan"><h4>Calendar</h4></div>

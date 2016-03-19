@@ -17,6 +17,23 @@ appData.service("routineService", function($http, $q){
           return defer.promise;        
         
     };
+
+    //Routine Details
+    this.routineDetail = function(routineid){
+        var url = "http://localhost:8000/api/v1/routines/"+routineid;
+        console.log(url); 
+        var defer = $q.defer();
+        $http.get(url, {callback:"JSON_CALLBACK"}, {get:{method: "JSONP"}})
+            .success(function(response){
+                defer.resolve(response);
+            })
+            .error(function(response){
+                defer.reject(response);    
+            })
+          
+          return defer.promise;        
+        
+    };    
     
     //Retrieves the list of reviews for a given routine id
     this.routineReviewList = function(routineid){

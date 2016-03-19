@@ -18,6 +18,23 @@ appData.service("challengeService", function($http, $q){
         
     };    
 
+    //List of Challenges suggested by experts
+    this.challengeDetail = function(challengeid){
+        var url = "http://localhost:8000/api/v1/challenges/"+challengeid;
+        console.log(url); 
+        var defer = $q.defer();
+        $http.get(url, {callback:"JSON_CALLBACK"}, {get:{method: "JSONP"}})
+            .success(function(response){
+                defer.resolve(response);
+            })
+            .error(function(response){
+                defer.reject(response);    
+            })
+          
+          return defer.promise;        
+        
+    };     
+    
     //Retrieves the list of reviews for a given challenge id
     this.challengeReviewList = function(challengeid){
         console.log(challengeid);

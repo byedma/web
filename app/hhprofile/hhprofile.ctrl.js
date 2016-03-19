@@ -154,5 +154,63 @@ angular.module("appHHProfile").controller("hhprofileController", ['$rootScope', 
         eventResize: $scope.alertOnResize
       }
     };
+    
+    //BMI
+    $scope.BMIChartObject = {};
+    $scope.BMIChartObject.type = "Gauge";
+    $scope.BMIChartObject.options = {
+      width: 300,
+      height: 300,
+      greenFrom: 18.5,
+      greenTo: 25,        
+      redFrom: 25,
+      redTo: 50,
+      yellowFrom: 0,
+      yellowTo: 18.5,
+      minorTicks: 5,
+      max: 50
+    };
+    
+    //Cholestrol
+    $scope.CholestrolChartObject = {};
+    $scope.CholestrolChartObject.type = "Gauge";
+    $scope.CholestrolChartObject.options = {
+      width: 300,
+      height: 300,
+      greenFrom: 0,
+      greenTo: 190,        
+      redFrom: 200,
+      redTo: 300,
+      yellowFrom: 190,
+      yellowTo: 200,
+      majorTicks: 20,    
+      minorTicks: 5,
+      max: 300
+    };
+
+    
+    $scope.physicalProfile = {};
+    $scope.physicalProfile.height = 70;
+    $scope.physicalProfile.weight = 74;
+    $scope.physicalProfile.cholestrol = 190;
+    
+    
+    $scope.updateAndGetBMI = function(){
+                var heightMtrs = $scope.physicalProfile.height * 0.0254;
+                console.log("height in meters is " + heightMtrs)
+                var BMI = $scope.physicalProfile.weight/(heightMtrs*heightMtrs);
+                BMI = Math.round(BMI);
+                var TC = $scope.physicalProfile.cholestrol;
+                var Cholestrol
+                $scope.BMIChartObject.data = [
+                    ['Label', 'Value'],
+                    ['BMI', BMI],   
+                ];
+                $scope.CholestrolChartObject.data = [
+                    ['Label', 'Value'], 
+                    ['Cholestrol', TC]
+                ];
+        };
+    
     init();
 }]);

@@ -3,29 +3,38 @@
         margin:0;
         font-family: Arial,Helvetica,freesans,sans-serif;
     }
+    #liner { background-color:darkkhaki;
+              width:100%;
+              height:7px;
+              position: fixed;    
+            }
+
     #topbar { background-color:#000000;
               width:100%;
-              height:47px;
+              height:58px;
               color:white;
+              
             }
 
     .fixedwidth{
         width:1200px;
         height: 20px;
-        margin:0 auto;
+        margin:0px auto;
         align-items: center;
-    }
-			
-    #logodiv{
-        background-color: #E7E8E1;
-        font-weight: bold;
-        color:yellow;
-        font-size: 1.6em;
         padding-top:7px;
-        float:left;
-        border-right:1px solid#E7E8E1;
-        padding-right:30px;
-
+        
+    }
+    
+    .logo{
+        background: transparent url("../images/hhlogo.png") no-repeat top left;
+        background-size: 135px 40px;
+        background-color: black;
+        float: left;
+        align-self: auto;
+        width: 135px;
+        height: 40px;
+        text-indent: -3000px;
+        margin: 10px 10px 0px 0;
     }
     
     .dropdowncustom{
@@ -43,7 +52,13 @@
         float:left;
 
     }
-
+    .center {
+        align-items: center;
+        margin: auto;
+        width: 60%;
+        border: 3px solid #73AD21;
+        padding: 10px;
+    }
     .categor{
         list-style: none;
         font-weight: bold;
@@ -106,6 +121,15 @@
         background-size: contain;
         background-repeat:no-repeat;
         background-position: right center;
+    } 
+    .crop {
+     height: 300px;
+     width: 400px;
+     overflow: hidden;
+    }
+    .crop img {
+     height: auto;
+     width: 400px;
     }
 /* blocks on landing page */
 
@@ -259,6 +283,21 @@
         background-color: transparent;
     }
 
+/* Dialog or Modal */
 
+
+    .dialogdemoBasicUsage #popupContainer {
+      position: relative; }
+    .dialogdemoBasicUsage .footer {
+      width: 100%;
+      text-align: center;
+      margin-left: 20px; }
+    .dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+      font-size: 0.8em;
+      margin-top: 50px; }
+    .dialogdemoBasicUsage button {
+      width: 200px; }
+    .dialogdemoBasicUsage div#status {
+      color: #c60008; }
 
 </style>

@@ -1,4 +1,4 @@
-var appProgram = angular.module('appProgram', ['ngRoute', 'ngResource']);
+var appProgram = angular.module('appProgram', ['ngRoute', 'ngResource', 'ngMaterial']);
 
 appProgram.config(['$httpProvider', function($httpProvider) {
     $httpProvider.defaults.xsrfCookieName = 'csrftoken';

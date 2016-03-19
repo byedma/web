@@ -3,7 +3,7 @@
     <div class="w3-container w3-green" ng-controller="hobbyController">
       <h3>Hobbies</h3>
     </div>
-    <nav class="w3-sidenav w3-collapse w3-teal" style="width:15%">
+    <nav class="w3-sidenav w3-collapse w3-teal" style="width:11%">
       <h4>Search</h4>
       <B>
       <div class="w3-dropdown-hover w3-sand dropdowncustom">
@@ -35,9 +35,12 @@
       </B>
     </nav>
 
-    <div style="margin-left:22%" ng-repeat="(hobbyIndex, h) in hobbyList">
+    <div style="margin-left:20%" ng-repeat="(hobbyIndex, h) in hobbyList">
         <div class="w3-container w3-sand w3-card-4">
             <ul>
+                <li class="crop">
+                    <img src="{{h.picture}}"/>
+                </li>                
                   <li>
                     <label class="w3-label w3-text-black"><B>Title: </B>{{h.name}}</label>  
                   </li>    
