@@ -63,8 +63,8 @@ appShell.config(function ($routeProvider) {
         
         .when('/register', {
         
-            templateUrl: 'app/profile/register.html',
-            controller: 'profileController'
+            templateUrl: 'app/register/register.html',
+            controller: 'registerController'
             
         })
 

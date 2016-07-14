@@ -65,8 +65,8 @@ angular.module("appProgram").controller("programController", ['$scope', '$resour
         console.log("program id in the context is " + x);
         $scope.programReviews(x);
         $scope.activeProgramIndex = programIndex;
-
     }
+
     $scope.isShowing = function (programIndex) {
         return $scope.activeProgramIndex === programIndex;
     };

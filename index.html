@@ -8,7 +8,7 @@
         <link href="/css/fullcalendar.css" rel="stylesheet" />
         <link href="/css/fullcalendar.print.css" rel="stylesheet" />
         <link href="/css/angular-material.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" >
         <link href="/css/custom.css" rel="stylesheet" />
         <!--library dependencies-->
         <script src="vendor/jquery.min.js"></script>
@@ -27,6 +27,9 @@
         <script src="vendor/gcal.js"></script>
         <script src="vendor/angular-ui-calendar/calendar.js"></script>
         <script src="vendor/ng-google-chart.min.js"></script>
+        <!--recaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit" async defer></script>
+        <script src="vendor/angular-recaptcha.min.js"></script>
         <!--angular application dependencies-->
         <script src="app/app.module.js"></script>
         <!--shell, landing page -->
@@ -59,9 +62,12 @@
         <!--profile page -->
         <script src="app/profile/profile.module.js"></script>
         <script src="app/profile/profile.ctrl.js"></script>
-        <!--profile page -->
+        <!--hh profile page -->
         <script src="app/hhprofile/hhprofile.module.js"></script>
-        <script src="app/hhprofile/hhprofile.ctrl.js"></script>        
+        <script src="app/hhprofile/hhprofile.ctrl.js"></script>
+        <!--register page -->
+        <script src="app/register/register.module.js"></script>
+        <script src="app/register/register.ctrl.js"></script>        
         <!--reusable directives defined in component-->
         <script src="app/component/component.module.js"></script>
         <script src="app/component/search.view.js"></script>

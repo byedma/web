@@ -39,9 +39,9 @@ angular.module("appHabit").controller("habitController", ['$scope', '$resource',
     $scope.subscribeToHabit = function(hab){
         $scope.newHabitServiceDetails.habit_id = hab.id;
         $scope.newHabitServiceDetails.user_id = $rootScope.signInResult.id;
-        $scope.newHabitServiceDetails.nick_name = "test";
+        //$scope.newHabitServiceDetails.nick_name = "test";
         $scope.newHabitServiceDetails.status = "E";
-        $scope.newHabitServiceDetails.end_date = "2017-02-19"
+        //$scope.newHabitServiceDetails.end_date = "2017-02-19"
         console.log($scope.newHabitServiceDetails);    
         //fields = ('id', 'habit_id', 'user_id', 'nick_name', 'status', 'end_date', 'creation_timestamp')
         habitService.subscribeHabit($scope.newHabitServiceDetails)

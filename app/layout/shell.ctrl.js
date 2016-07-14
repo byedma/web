@@ -31,6 +31,7 @@ angular.module("appShell").controller("shellController", ['$scope','$rootScope',
                         console.log($rootScope.signOutResult);
                         $rootScope.login='SignedOut';
                         $rootScope.username='';
+                        $rootScope.disableSignInButton = {visibility: 'visible'};
                         $window.location='#/landing';
                         },
                     function(err){

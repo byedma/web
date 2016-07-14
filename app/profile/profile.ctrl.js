@@ -2,13 +2,12 @@
 angular.module("appProfile").controller("profileController", ['$scope', '$resource', '$window', '$rootScope', 'userProfileService', 'circleService', 'circleMemberService',function($scope, $resource, $window, $rootScope, userProfileService, circleService, circleMemberService){
         
         $scope.userProfile = null;
-        $scope.newUserProfile = null;
         $scope.circleMemberList = null;
         
-
+        userid = $rootScope.signInResult.id;
         var init = function(){
         //retrieve customer registration details to display for update
-        userProfileService.userDetails()
+        userProfileService.userDetails(userid)
         .then(
                     function(response){
                         $scope.userProfile=response;
@@ -44,25 +43,6 @@ angular.module("appProfile").controller("profileController", ['$scope', '$resour
                     },
                     function(err){
                         console.log('error updating the user details: ', err);
-                    }            
-            )
-        }
-        //creating a new user
-        $scope.createUserProfile = function(){
-            console.log("in create function, about to call post service")
-            userProfileService.createUser($scope.newUserProfile)
-            .then(
-                    function(response){
-                        $scope.userProfileCreateResult=response;
-                        console.log($scope.userProfileCreateResult);
-                        $rootScope.signInResult=response;
-                        $rootScope.login='Success';
-                        console.log($rootScope.signInResult);
-                        $window.location='/landing';
-                        
-                    },
-                    function(err){
-                        console.log('error creating the new user: ', err);
                     }            
             )
         }

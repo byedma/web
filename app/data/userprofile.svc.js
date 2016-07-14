@@ -2,8 +2,8 @@ appData.service("userProfileService", function($http, $q) {
     //self is going to be used when function refers to this.
     var self = this;
     
-    this.userDetails = function () {
-        var url = "http://localhost:8000/api/v1/users/1";
+    this.userDetails = function (userid) {
+        var url = "http://localhost:8000/api/v1/users/" + userid +"/";
         console.log(url); 
         var defer = $q.defer();
         $http.get(url, {callback:"JSON_CALLBACK"}, {get:{method: "JSONP"}})

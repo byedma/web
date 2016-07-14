@@ -75,25 +75,25 @@
         
         </div>    
 <br/>    
-<div class="circlelistform">    
-    <div class="w3-container">
-        <table class="w3-table w3-bordered w3-striped w3-border w3-hoverable w3-card-4">
-            <tr class="w3-blue"><th>Name</th><th>Status</th><th>Members Can Refer</th><th>Max. Members Allowed</th><th>Action</th></tr>
-            <tr ng-repeat="c in circleList">
-                <td>{{c.name}}</td>
-                <td>{{c.status}}</td>
-                <td>{{c.members_can_refer}}</td>
-                <td>{{c.max_number_members}}</td>
-                <td>
-                    <button class="w3-btn w3-round w3-hover-purple" ng-click="updateCircle(c)">Update</button>
-                    <button class="w3-btn w3-round w3-hover-purple" ng-model="showCircleMemberForm" ng-click="showCircleMembers(c)">Manage Members</button>
-                    <button class="w3-btn w3-round w3-hover-purple" ng-click="deleteCircle(c)">Delete</button>
-                </td>
-            </tr>
-        
-        </table>
+    <div class="circlelistform">    
+        <div class="w3-container">
+            <table class="w3-table w3-bordered w3-striped w3-border w3-hoverable w3-card-4">
+                <tr class="w3-blue"><th>Name</th><th>Status</th><th>Members Can Refer</th><th>Max. Members Allowed</th><th>Action</th></tr>
+                <tr ng-repeat="c in circleList">
+                    <td>{{c.name}}</td>
+                    <td>{{c.status}}</td>
+                    <td>{{c.members_can_refer}}</td>
+                    <td>{{c.max_number_members}}</td>
+                    <td>
+                        <button class="w3-btn w3-round w3-hover-purple" ng-click="updateCircle(c)">Update</button>
+                        <button class="w3-btn w3-round w3-hover-purple" ng-model="showCircleMemberForm" ng-click="showCircleMembers(c)">Manage Members</button>
+                        <button class="w3-btn w3-round w3-hover-purple" ng-click="deleteCircle(c)">Delete</button>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
     </div>
-</div>
     <br/>
   
 

@@ -1,0 +1,75 @@
+<div ng-app="appRegister">
+
+    <div class="w3-container w3-green" ng-controller="registerController">
+      <h3>Register</h3>
+    </div>    
+    
+    <div class="w3-container w3-card-4 userinputform">
+
+        <form role="form" ng-submit="createUserProfile()">
+  
+              <div class="form-group">
+                <label for="firstname" class="w3-label w3-text-white"><B>First Name</B></label>  
+                <input type="text" class="w3-input" id="firstname" required="true" ng-model="newUserProfile.first_name" maxlength="50">
+              </div>        
+              <div class="form-group">
+                <label for="lastname" class="w3-label w3-text-white"><B>Last Name</B></label>  
+                <input type="text" class="w3-input" id="lastname" required="true" ng-model="newUserProfile.last_name" maxlength="50">
+              </div>
+              <div class="form-group">
+                <label for="middlename" class="w3-label w3-text-white"><B>Middle Name</B></label>  
+                <input type="text" class="w3-input" id="middlename" ng-model="newUserProfile.middle_name" maxlength="25">
+              </div>
+              <div class="form-group">    
+              <label for="email" class="w3-label w3-text-white"><B>Email Address</B></label>  
+                <input type="email" validate-email class="w3-input w3-validate" id="email" required="true" ng-model="newUserProfile.email" maxlength="50">
+              </div>
+              <div class="form-group">
+                <label for="password" class="w3-label w3-text-white"><B>Password</B></label>  
+                <input type="password" class="w3-input" id="password" required="true" ng-model="newUserProfile.password" maxlength="25">
+              </div> 
+              <div class="form-group">
+                <label for="title" class="w3-label w3-text-white"><B>Confirm Password</B></label>  
+                <input type="password" class="w3-input" id="title" required="true" ng-model="newUserProfile.confirm_password" maxlength="25">
+              </div>             
+                <br/>
+                <div class="form-group">
+                    <label for="title" class="w3-label w3-text-white"><B>Title</B></label>  
+                    <select class="form-control" id="title" ng-model="newUserProfile.title">
+                    <option value="MRS">Mrs</option>
+                    <option value="MR" selected>Mr</option>
+                    <option value="DR">Dr</option>
+                    <option value="OTH">Others</option>
+                  </select>
+              </div>
+                <br/>
+              <div class="form-group">
+                <label for="gender" class="w3-label w3-text-white"><B>Gender</B></label>  
+                  <select class="form-control" id="gender" ng-model="newUserProfile.gender">
+                    <option value="M" selected>Male</option>
+                    <option value="F">Female</option>
+                    <option value="O">Other</option>
+                  </select>
+              </div>            
+
+                <br/>
+                <div class="w3-teal"
+                vc-recaptcha
+                ng-model="recaptchaResponse"
+                theme="dark"
+                size="normal"
+                type="'image'"
+                key="'6LeCuR4TAAAAAKUXnmbJofGwzFLKQEZgW5fFOGaf'"
+            ></div>
+            <br/>
+            <div class="form-group"><b>
+                <button type="submit" class="w3-btn w3-round w3-hover-purple">Submit</button></b>
+            </div>
+
+        </form>
+            <br/>
+
+
+    </div> 
+
+</div>

@@ -7,7 +7,7 @@ angular.module("appHHProfile").controller("hhprofileController", ['$rootScope', 
     $scope.routineServiceList = null;
     $scope.challengeServiceList = null;
     $scope.eventSources = [];
-    
+
     var init = function(){
         if ($rootScope.login=="Success") 
         {   
@@ -18,7 +18,7 @@ angular.module("appHHProfile").controller("hhprofileController", ['$rootScope', 
         else 
         {   
             $rootScope.redirectFrom = '/hhprofile';
-            $rootScope.signInRequiredMessage = 'Dear User, hhProfile feature gives you ability to subscribe and manage features like Routines and Challenges, Please sign-in if you already registered or create a login, it just takes couple of minutes of your valuable time';
+            $rootScope.status = 'Dear User, hhProfile feature gives you ability to subscribe and manage features like Routines and Challenges, Please sign-in if you already registered or create a login by clicking on register link below, it just takes couple of minutes of your valuable time';
             $window.location='#/signin';
         }
         

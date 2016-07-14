@@ -3,7 +3,7 @@
     <div class="w3-container w3-green" ng-controller="programController">
       <h3>Programs</h3>
     </div>
-    <nav class="w3-sidenav w3-collapse w3-teal" style="width:11%">
+    <nav class="w3-sidenav w3-collapse w3-teal" style="width:10%">
       <h4>Search</h4>
       <B>
       <div class="w3-dropdown-hover w3-sand dropdowncustom">
@@ -62,13 +62,13 @@
     -->                
                   <button type="submit" class="w3-btn w3-round w3-hover-purple"><B>Subscribe</B></button>
                   <button type="button" class="w3-btn w3-round w3-hover-purple" onclick=""><B>Recommend</B></button>
-                  <button type="button" class="w3-btn w3-round w3-hover-purple" ng-click="showProgramReviews(programIndex, h)" ><B>Show Reviews</B></button>
+                  <button type="button" class="w3-btn w3-round w3-hover-purple" ng-click="showProgramReviews(programIndex, h)"><B>Show Reviews</B></button>
                   <button type="button" class="w3-btn w3-round w3-hover-purple" ng-click="showTabDialog($event, h)"><B>Details</B></button>
                 </div>
             </form><br/>
 
                 
-                <div ng-repeat="r in programReviewList" ng-show="isShowing(programIndex)">
+                <div id="reviewlist" ng-repeat="r in programReviewList" ng-show="isShowing(programIndex)">
                     <h5>Review</h5>
                     <div class="w3-container w3-bordered w3-striped w3-border w3-card-4" >
                         

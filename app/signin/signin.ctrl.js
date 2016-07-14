@@ -4,7 +4,7 @@ angular.module("appSignIn").controller("signInController", ['$scope', '$resource
         $scope.newSignIn = null;
         //clearing any credentials                                                    
         //var init = function(){clearCredentials();};
-                                                            
+        $scope.status = $rootScope.status;                                                    
         //new sign-In Verification
         $scope.signin = function(){
             console.log("in login service")
